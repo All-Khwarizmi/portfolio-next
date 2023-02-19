@@ -7,7 +7,7 @@ export default function Head() {
         name='description'
         content="Jason Suárez || Spanish teacher | Full-stack JavaScript developer | Entrepreneur I create applications to make my student's learning journey smoother."
       />
-      <link rel='icon' href='/portefeuille.png' />
+      <link rel='icon' href='/favicon.ico' />
     </>
   );
 }

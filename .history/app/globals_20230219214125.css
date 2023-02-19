@@ -97,7 +97,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-    background-color: black;
+    
 }
 
 a {
@@ -109,8 +109,4 @@ a {
   html {
     color-scheme: dark;
   }
-}
-
-.landing {
-  background-color: #222;
 }
