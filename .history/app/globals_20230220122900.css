@@ -112,7 +112,6 @@ a {
 }
 
 .landing {
-
-background: rgb(79,79,79);
-background: linear-gradient(14deg, rgba(79,79,79,1) 0%, rgba(9,8,8,1) 100%);
+background: rgb(101,101,101);
+background: linear-gradient(153deg, rgba(101,101,101,1) 0%, rgba(9,8,8,1) 100%);
 }
