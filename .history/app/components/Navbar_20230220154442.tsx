@@ -16,9 +16,9 @@ function MobileNav({ open, setOpen }: any) {
   const bg = useColorModeValue('white', 'white');
   return (
     <nav
-      className={`absolute top-0 left-0 text-black landing text-white h-screen w-screen transform  ${
+      className={`fixed overflow-scroll left-0 text-black landing text-white h-screen w-screen transform bg-white ${
         open ? '-translate-x-0' : '-translate-x-full'
-      } drop-shadow-md filter overflow-y-scroll transition-transform duration-300 ease-in-out `}
+      } drop-shadow-md filter  transition-transform duration-300 ease-in-out `}
     >
       <div className='flex h-20  items-center justify-center bg-red-800 drop-shadow-md filter'>
         {' '}
@@ -102,7 +102,7 @@ function MobileNav({ open, setOpen }: any) {
           w='full'
           px={6}
           align='center'
-        
+          bg={bg}
           justify='flex-end'
         >
           {' '}
@@ -152,7 +152,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <nav className='h-16 flex fixed w-screen drop-shadow-md bg-red-800  justify-end  '>
+      <nav className='h-16 flex  fixed w-screen drop-shadow-md bg-red-800  justify-end  '>
         <MobileNav open={open} setOpen={setOpen} />
         <ul
           className={clsx(

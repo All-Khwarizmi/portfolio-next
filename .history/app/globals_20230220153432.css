@@ -115,7 +115,7 @@ a {
   }
 }
 @media  (min-width: 280px) and (orientation: landscape) {
-  body {
+  #myVideo {
     width: 100vw;
     height: 100vh;
 object-fit: cover;

@@ -102,7 +102,7 @@ function MobileNav({ open, setOpen }: any) {
           w='full'
           px={6}
           align='center'
-        
+          bg={bg}
           justify='flex-end'
         >
           {' '}

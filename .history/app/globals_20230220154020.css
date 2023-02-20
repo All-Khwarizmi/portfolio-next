@@ -114,14 +114,6 @@ a {
     color-scheme: dark;
   }
 }
-@media  (min-width: 280px) and (orientation: landscape) {
-  body {
-    width: 100vw;
-    height: 100vh;
-object-fit: cover;
-    background: white;
-  }
-}
 
 .landing {
 

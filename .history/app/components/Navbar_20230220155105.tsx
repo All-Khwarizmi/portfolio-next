@@ -16,9 +16,9 @@ function MobileNav({ open, setOpen }: any) {
   const bg = useColorModeValue('white', 'white');
   return (
     <nav
-      className={`absolute top-0 left-0 text-black landing text-white h-screen w-screen transform  ${
+      className={`absolute top-0 left-0 text-black landing text-white h-screen w-screen transform bg-white ${
         open ? '-translate-x-0' : '-translate-x-full'
-      } drop-shadow-md filter overflow-y-scroll transition-transform duration-300 ease-in-out `}
+      } drop-shadow-md filter overflow-scroll transition-transform duration-300 ease-in-out `}
     >
       <div className='flex h-20  items-center justify-center bg-red-800 drop-shadow-md filter'>
         {' '}
@@ -97,12 +97,12 @@ function MobileNav({ open, setOpen }: any) {
         </Link>
 
         <Flex
-          className='py-2 text-red-70 bg-inherit text-2xl'
+          className='py-2 text-red-70 text-2xl'
           direction={['column', 'column', 'row']}
           w='full'
           px={6}
           align='center'
-        
+          bg={bg}
           justify='flex-end'
         >
           {' '}
