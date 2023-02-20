@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --gradient: linear-gradient(27deg, var(--colorOne) 0%, var(--colorTwo) 100%);
-  --redTheme: #222;
+ --gradient: linear-gradient(27deg, var(--colorOne) 0%, var(--colorTwo) 100%);
+  --redTheme : #222;
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
@@ -89,7 +89,9 @@
 html,
 body {
   width: 100vw;
-  height: 100vh;
+    height: 100vh;
+  
+  
 }
 
 body {
@@ -100,7 +102,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-  background-color: black;
+    background-color: black;
 }
 
 a {
@@ -113,19 +115,17 @@ a {
     color-scheme: dark;
   }
 }
-@media (min-width: 280px) and (orientation: landscape) {
+@media  (min-width: 280px) and (orientation: landscape) {
   body {
     width: 100vw;
     height: 100vh;
-    object-fit: cover;
+object-fit: cover;
+    
   }
 }
 
 .landing {
-  background: rgb(79, 79, 79);
-  background: linear-gradient(
-    14deg,
-    rgba(79, 79, 79, 1) 0%,
-    rgba(9, 8, 8, 1) 100%
-  );
+
+background: rgb(79,79,79);
+background: linear-gradient(14deg, rgba(79,79,79,1) 0%, rgba(9,8,8,1) 100%);
 }
