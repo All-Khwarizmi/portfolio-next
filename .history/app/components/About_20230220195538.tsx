@@ -4,12 +4,11 @@ import Image from 'next/image'
 const About = () => {
   return (
     <div className='h-screen about'>
+        <Image src={me} alt='Picture of Jason Suárez' >
 
-      <div className='h-60  rounded-xl w-96'>
-     {/*    <Image className='rounded-xl' src={me} alt='Picture of Jason Suárez' /> */}
-      </div>
+        </Image>
     </div>
-  );
+  )
 }
 
 export default About

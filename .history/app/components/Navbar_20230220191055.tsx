@@ -102,6 +102,7 @@ function MobileNav({ open, setOpen }: any) {
           w='full'
           px={6}
           align='center'
+        
           justify='flex-end'
         >
           {' '}
@@ -151,7 +152,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <nav className='h-16 z-100 flex fixed w-screen drop-shadow-md bg-red-800  justify-end  '>
+      <nav className='h-16 é flex fixed w-screen drop-shadow-md bg-red-800  justify-end  '>
         <MobileNav open={open} setOpen={setOpen} />
         <ul
           className={clsx(
@@ -166,7 +167,12 @@ const Navbar = () => {
           </li>
           <li>
             <Link href={'#'}>
-              <p className='uppercase '>projects</p>
+              <p className='uppercase '>About</p>
+            </Link>
+          </li>
+          <li>
+            <Link href={'#'}>
+              <p className='uppercase '>Blog</p>
             </Link>
           </li>
           <li>
@@ -177,11 +183,6 @@ const Navbar = () => {
           <li>
             <Link href={'#'}>
               <p className='uppercase '>Contact</p>
-            </Link>
-          </li>
-          <li>
-            <Link href={'#'}>
-              <p className='uppercase '>Blog</p>
             </Link>
           </li>
         </ul>
@@ -210,6 +211,7 @@ const Navbar = () => {
             />
           </div>
         </div>
+     
       </nav>
     </>
   );

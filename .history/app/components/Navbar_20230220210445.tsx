@@ -102,6 +102,7 @@ function MobileNav({ open, setOpen }: any) {
           w='full'
           px={6}
           align='center'
+        
           justify='flex-end'
         >
           {' '}
@@ -166,7 +167,12 @@ const Navbar = () => {
           </li>
           <li>
             <Link href={'#'}>
-              <p className='uppercase '>projects</p>
+              <p className='uppercase '>pro</p>
+            </Link>
+          </li>
+          <li>
+            <Link href={'#'}>
+              <p className='uppercase '>Blog</p>
             </Link>
           </li>
           <li>
@@ -177,11 +183,6 @@ const Navbar = () => {
           <li>
             <Link href={'#'}>
               <p className='uppercase '>Contact</p>
-            </Link>
-          </li>
-          <li>
-            <Link href={'#'}>
-              <p className='uppercase '>Blog</p>
             </Link>
           </li>
         </ul>
@@ -210,6 +211,7 @@ const Navbar = () => {
             />
           </div>
         </div>
+     
       </nav>
     </>
   );
