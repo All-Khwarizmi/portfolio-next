@@ -6,7 +6,7 @@ const About = () => {
     <div className='h-screen w-screen about'>
       <div className='h-60  rounded-xl w-full'>
         {/*    <Image className='rounded-xl' src={me} alt='Picture of Jason Suárez' /> */}
-        <div className='flex justify-center items-center'>
+        <div className='grid justify-center items-center'>
           <iframe
             className='w-[100%]'
             src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1Z_3iH_XE0HMc2072NU4qledD9myxvFhiShV8EcloG3I&font=Default&lang=en&initial_zoom=2&height=650'
