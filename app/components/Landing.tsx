@@ -9,7 +9,7 @@ const roboto = Roboto({ subsets: ['cyrillic'], weight: ['100', '300', '400'] });
 
 const Landing = () => {
   return (
-    <div className='h-full landing flex items-center justify-center '>
+    <div className='h-screen landing flex items-center justify-center '>
       <div>
         <h1 className={clsx(openSans.className, 'text-5xl font-bold pb-3')}>
           Hi, I'm Jason

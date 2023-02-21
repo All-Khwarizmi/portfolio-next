@@ -2,10 +2,7 @@ import clsx from 'clsx';
 import React from 'react';
 import { Inter, Montserrat, Open_Sans, Roboto } from '@next/font/google';
 import Link from 'next/link';
-import Image from 'next/image';
-import dico from 'public/dico.png'
-import gite from 'public/gites.png'
-import quizoo from 'public/quizoo.png'
+
 const montserrat = Montserrat({ weight: ['100',"300", "400" ], subsets: ["latin"] });
 const openSans = Open_Sans({
   weight: [ '300', '400'],
@@ -30,10 +27,10 @@ const Projects = () => {
             href={'https://dico-ochre.vercel.app/'}
           >
             <div className=''>
-              <Image
+              <img
                 
                 className='rounded rounded-bl-none rounded-br-none'
-                src={dico}
+                src="./dico-gif.gif"
                 alt='project'
               />
             </div>
@@ -49,10 +46,10 @@ const Projects = () => {
             href={'https://dico-ochre.vercel.app/'}
           >
             <div className=''>
-              <Image
+              <img
                 
                 className='rounded  rounded-bl-none rounded-br-none'
-                src={gite}
+                src="./gites-gif.gif"
                 alt='project'
               />
             </div>
@@ -70,10 +67,10 @@ const Projects = () => {
             href={'https://dico-ochre.vercel.app/'}
           >
             <div className=''>
-              <Image
+              <img
                 
                 className='rounded max-h-96 rounded-bl-none rounded-br-none'
-                src={quizoo}
+                src="./quizoo-gif.gif"
                 alt='project'
               />
             </div>
