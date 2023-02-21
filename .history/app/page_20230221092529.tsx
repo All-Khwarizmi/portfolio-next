@@ -8,13 +8,13 @@ export default function Home() {
    
         {' '}
         <Landing />
-    
-    
+      </section>
+      <section id="projects">
         <Projects />
-    
-      
+      </section>
+      <section id="timeline">
         <About />
-    
+      </section>
     </>
   );
 }

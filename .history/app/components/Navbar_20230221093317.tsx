@@ -44,7 +44,7 @@ function MobileNav({ open, setOpen }: any) {
             montserrat.className,
             'my-4 text-xl font-bold uppercase'
           )}
-          href='#projects'
+          href='projects'
           onClick={() =>
             setTimeout(() => {
               setOpen(!open);
@@ -165,8 +165,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-           
-            <Link href='#projects'>
+            <Link href={'#projects'}>
               <p className='uppercase '>projects</p>
             </Link>
           </li>

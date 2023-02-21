@@ -165,8 +165,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-           
-            <Link href='#projects'>
+            <Link href={'#projects'}>
               <p className='uppercase '>projects</p>
             </Link>
           </li>
@@ -176,12 +175,12 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link href={'#contact'}>
+            <Link href={'#'}>
               <p className='uppercase '>Contact</p>
             </Link>
           </li>
           <li>
-            <Link href={'#blog'}>
+            <Link href={'#'}>
               <p className='uppercase '>Blog</p>
             </Link>
           </li>

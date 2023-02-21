@@ -166,9 +166,9 @@ const Navbar = () => {
           </li>
           <li>
            
-            <Link href='#projects'>
+            {/* <Link href={'#projects'}>
               <p className='uppercase '>projects</p>
-            </Link>
+            </Link> */}
           </li>
           <li>
             <Link href={'#timeline'}>

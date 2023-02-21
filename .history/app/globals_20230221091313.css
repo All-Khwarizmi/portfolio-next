@@ -6,7 +6,6 @@
   --bleu: #4B567B;
   --red: #BE1E34;
   --gray: #393837;
-  --gray2: #333333;
   --gradient: linear-gradient(27deg, var(--colorOne) 0%, var(--colorTwo) 100%);
   --redTheme: #222;
   --max-width: 1100px;
@@ -148,5 +147,5 @@ a {
 }
 
 .project-caption {
-  background-color: var(--gray2);
+  
 }

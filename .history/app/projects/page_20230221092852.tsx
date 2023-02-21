@@ -1,16 +1,9 @@
-import clsx from 'clsx';
-import React from 'react';
 import { Inter, Montserrat, Open_Sans, Roboto } from '@next/font/google';
 import Link from 'next/link';
 
-const montserrat = Montserrat({ weight: ['100',"300", "400" ], subsets: ["latin"] });
-const openSans = Open_Sans({
-  weight: [ '300', '400'],
-  subsets: ['latin'],
-});
-const Projects = () => {
+const page = () => {
   return (
-    <section id='projects' className='min-h-[100%]  projects text-center'>
+    <main id='projects-page' className='min-h-[100%]  projects text-center'>
       <h1
         className={clsx(
           openSans.className,
@@ -83,8 +76,8 @@ const Projects = () => {
           </Link>
         </div>
       </div>
-    </section>
+    </main>
   );
 };
 
-export default Projects;
+export default page;

@@ -9,10 +9,10 @@ export default function Home() {
         {' '}
         <Landing />
     
-    
+      <section id="projects">
         <Projects />
     
-      
+      <section id="timeline">
         <About />
     
     </>

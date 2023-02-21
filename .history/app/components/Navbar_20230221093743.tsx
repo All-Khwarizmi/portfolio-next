@@ -165,8 +165,8 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-           
-            <Link href='#projects'>
+            
+            <Link href={'#projects'}>
               <p className='uppercase '>projects</p>
             </Link>
           </li>

@@ -28,12 +28,13 @@ const Projects = () => {
           >
             <div className=''>
               <img
+                
                 className='rounded rounded-bl-none rounded-br-none'
-                src='./dico-gif.gif'
+                src="./dico-gif.gif"
                 alt='project'
               />
             </div>
-            <h1 className={clsx(montserrat.className, 'project-caption py-5 ')}>
+            <h1 className={clsx(montserrat.className, ' py-5 ')}>
               Dico
             </h1>
           </Link>
@@ -46,15 +47,14 @@ const Projects = () => {
           >
             <div className=''>
               <img
+                
                 className='rounded  rounded-bl-none rounded-br-none'
-                src='./gites-gif.gif'
+                src="./gites-gif.gif"
                 alt='project'
               />
             </div>
             <div className='h-20'>
-              <h1
-                className={clsx(montserrat.className, 'project-caption py-5 ')}
-              >
+              <h1 className={clsx(montserrat.className, 'bg-gray-600 py-5 ')}>
                 Gîtes Mon Trésor
               </h1>
             </div>
@@ -68,15 +68,14 @@ const Projects = () => {
           >
             <div className=''>
               <img
+                
                 className='rounded max-h-96 rounded-bl-none rounded-br-none'
-                src='./quizoo-gif.gif'
+                src="./quizoo-gif.gif"
                 alt='project'
               />
             </div>
             <div className='h-20'>
-              <h1
-                className={clsx(montserrat.className, 'project-caption py-5 ')}
-              >
+              <h1 className={clsx(montserrat.className, 'bg-gray-600 py-5 ')}>
                 QuizoO
               </h1>
             </div>

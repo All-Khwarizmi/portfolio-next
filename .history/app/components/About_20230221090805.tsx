@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const About = () => {
   return (
-    <div id='timeline' className='h-screen w-screen about'>
+    <div className='h-screen w-screen about'>
       <div className='h-60 grid place-items-center lg:block rounded-xl lg:w-full'>
         {/*    <Image className='rounded-xl' src={me} alt='Picture of Jason Suárez' /> */}
         <div className='flex w-[100%]  justify-center items-center'>

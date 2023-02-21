@@ -160,28 +160,27 @@ const Navbar = () => {
           )}
         >
           <li>
-            <Link href={'#landing'}>
+            <Link href={'#'}>
               <p className='uppercase '>Home</p>
             </Link>
           </li>
           <li>
-           
-            <Link href='#projects'>
+            <Link href={'#'}>
               <p className='uppercase '>projects</p>
             </Link>
           </li>
           <li>
-            <Link href={'#timeline'}>
+            <Link href={'#'}>
               <p className='uppercase '>Timeline</p>
             </Link>
           </li>
           <li>
-            <Link href={'#contact'}>
+            <Link href={'#'}>
               <p className='uppercase '>Contact</p>
             </Link>
           </li>
           <li>
-            <Link href={'#blog'}>
+            <Link href={'#'}>
               <p className='uppercase '>Blog</p>
             </Link>
           </li>

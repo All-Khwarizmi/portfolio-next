@@ -165,10 +165,10 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-           
-            <Link href='#projects'>
+            <a href="#projects"> pro</a>
+            {/* <Link href={'#projects'}>
               <p className='uppercase '>projects</p>
-            </Link>
+            </Link> */}
           </li>
           <li>
             <Link href={'#timeline'}>

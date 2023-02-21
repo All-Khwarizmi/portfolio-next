@@ -9,7 +9,7 @@ export default function Home() {
         {' '}
         <Landing />
     
-    
+      <section id="projects">
         <Projects />
     
       

@@ -167,7 +167,7 @@ const Navbar = () => {
           <li>
            
             <Link href='#projects'>
-              <p className='uppercase '>projects</p>
+             projects
             </Link>
           </li>
           <li>

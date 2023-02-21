@@ -5,16 +5,12 @@ import Projects from "./components/Projects";
 export default function Home() {
   return (
     <>
-   
-        {' '}
-        <Landing />
-    
-    
-        <Projects />
-    
-      
-        <About />
-    
+    <section></section>
+    <section></section>
+    <section></section>
+    <Landing />
+    <Projects />
+    <About />
     </>
   );
 }

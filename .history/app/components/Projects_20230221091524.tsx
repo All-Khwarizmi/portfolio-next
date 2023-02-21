@@ -74,9 +74,7 @@ const Projects = () => {
               />
             </div>
             <div className='h-20'>
-              <h1
-                className={clsx(montserrat.className, 'project-caption py-5 ')}
-              >
+              <h1 className={clsx(montserrat.className, 'bg-gray-600 py-5 ')}>
                 QuizoO
               </h1>
             </div>
