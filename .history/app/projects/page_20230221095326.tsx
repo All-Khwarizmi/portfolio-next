@@ -1,16 +1,49 @@
-import clsx from 'clsx';
-import React from 'react';
+"use client"
 import { Inter, Montserrat, Open_Sans, Roboto } from '@next/font/google';
+import clsx from 'clsx';
 import Link from 'next/link';
+import { useState } from 'react';
 
-const montserrat = Montserrat({ weight: ['100',"300", "400" ], subsets: ["latin"] });
-const openSans = Open_Sans({
-  weight: [ '300', '400'],
+
+const montserrat = Montserrat({
+  weight: ['100', '300', '400'],
   subsets: ['latin'],
 });
-const Projects = () => {
+const openSans = Open_Sans({
+  weight: ['300', '400'],
+  subsets: ['latin'],
+});
+
+const page = () => {
+    const [projects, setProjects] = useState([
+      {
+        project: './dico-gif.gif',
+        all: true,
+        vanilla: false,
+        react: false,
+        next: true,
+      },
+      {
+        project: './gites-gif.gif',
+        all: true,
+        vanilla: false,
+        react: false,
+        next: true,
+      },
+      {
+        project: './quizoo-gif.gif',
+        all: true,
+        vanilla: false,
+        react: true,
+        next: false,
+      },
+    ]);
+
+    const filteredProjects = projects.reduce()
+    
+
   return (
-    <section id='projects' className='min-h-[100%]  projects text-center'>
+    <main id='projects-page' className='min-h-[100%]  projects text-center'>
       <h1
         className={clsx(
           openSans.className,
@@ -42,7 +75,7 @@ const Projects = () => {
           <Link
             className=''
             target={'_blank'}
-            href={'https://gites-gamma.vercel.app'}
+            href={'https://dico-ochre.vercel.app/'}
           >
             <div className=''>
               <img
@@ -64,7 +97,7 @@ const Projects = () => {
           <Link
             className=''
             target={'_blank'}
-            href={'https://dapper-belekoy-aa000e.netlify.app/'}
+            href={'https://dico-ochre.vercel.app/'}
           >
             <div className=''>
               <img
@@ -83,8 +116,8 @@ const Projects = () => {
           </Link>
         </div>
       </div>
-    </section>
+    </main>
   );
 };
 
-export default Projects;
+export default page;

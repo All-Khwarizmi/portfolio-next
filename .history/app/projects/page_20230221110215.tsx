@@ -36,12 +36,17 @@ const page = () => {
   ]);
   const [query, setQuery] = useState('all');
 
+/* useEffect(() => {
+if (query === "all") {
+   let filteredProjects = projects;
+} 
 
+}, [query]) */
 
   let filteredProjects = projects.filter((project) => project.techno === query);
 
 
-  const handleCheck = (e: any) => {
+  const handleCheck = (e) => {
     console.log(e.target.value);
     setQuery(e.target.value);
   };
@@ -49,7 +54,7 @@ const page = () => {
   return (
     <main
       id='projects-page'
-      className=' min-h-screen  projects text-center'
+      className='h-screen min-h-screen  projects text-center'
     >
       <h1
         className={clsx(

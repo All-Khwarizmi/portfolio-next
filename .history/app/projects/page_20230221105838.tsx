@@ -36,12 +36,17 @@ const page = () => {
   ]);
   const [query, setQuery] = useState('all');
 
+/* useEffect(() => {
+if (query === "all") {
+   let filteredProjects = projects;
+} 
 
+}, [query]) */
 
   let filteredProjects = projects.filter((project) => project.techno === query);
 
 
-  const handleCheck = (e: any) => {
+  const handleCheck = (e) => {
     console.log(e.target.value);
     setQuery(e.target.value);
   };
@@ -49,7 +54,7 @@ const page = () => {
   return (
     <main
       id='projects-page'
-      className=' min-h-screen  projects text-center'
+      className='h-screen min-h-screen  projects text-center'
     >
       <h1
         className={clsx(
@@ -77,70 +82,38 @@ const page = () => {
         <br></br>
       </form>
       <div className='flex min-h-[100%] flex-col items-center justify-between lg:flex-row lg:justify-center flex-wrap  px-2'>
-        {query === 'all' &&
-          projects.map((project) => {
-            return (
-              <div
-                key={project.name}
-                className='p-5  w-[100%] lg:w-[30%] lg:h-96'
+        { 
+        filteredProjects.map((project) => {
+          return (
+            <div
+              key={project.name}
+              className='p-5  w-[100%] lg:w-[30%] lg:h-96'
+            >
+              <Link
+                prefetch={false}
+                className=''
+                target={'_blank'}
+                href={` ${project.href} `}
               >
-                <Link
-                  prefetch={false}
-                  className=''
-                  target={'_blank'}
-                  href={` ${project.href} `}
+                <div className=''>
+                  <img
+                    className='rounded rounded-bl-none rounded-br-none'
+                    src={` ${project.gif} `}
+                    alt='project'
+                  />
+                </div>
+                <h1
+                  className={clsx(
+                    montserrat.className,
+                    'project-caption py-5 '
+                  )}
                 >
-                  <div className=''>
-                    <img
-                      className='rounded rounded-bl-none rounded-br-none'
-                      src={` ${project.gif} `}
-                      alt='project'
-                    />
-                  </div>
-                  <h1
-                    className={clsx(
-                      montserrat.className,
-                      'project-caption py-5 '
-                    )}
-                  >
-                    {project.name}
-                  </h1>
-                </Link>
-              </div>
-            );
-          })}
-        {query !== 'all' &&
-          filteredProjects.map((project) => {
-            return (
-              <div
-                key={project.name}
-                className='p-5  w-[100%] lg:w-[30%] lg:h-96'
-              >
-                <Link
-                  prefetch={false}
-                  className=''
-                  target={'_blank'}
-                  href={` ${project.href} `}
-                >
-                  <div className=''>
-                    <img
-                      className='rounded rounded-bl-none rounded-br-none'
-                      src={` ${project.gif} `}
-                      alt='project'
-                    />
-                  </div>
-                  <h1
-                    className={clsx(
-                      montserrat.className,
-                      'project-caption py-5 '
-                    )}
-                  >
-                    {project.name}
-                  </h1>
-                </Link>
-              </div>
-            );
-          })}
+                  {project.name}
+                </h1>
+              </Link>
+            </div>
+          );
+        })}
       </div>
     </main>
   );

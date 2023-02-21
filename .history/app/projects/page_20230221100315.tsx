@@ -1,16 +1,41 @@
-import clsx from 'clsx';
-import React from 'react';
+"use client"
 import { Inter, Montserrat, Open_Sans, Roboto } from '@next/font/google';
+import clsx from 'clsx';
 import Link from 'next/link';
+import { useState } from 'react';
 
-const montserrat = Montserrat({ weight: ['100',"300", "400" ], subsets: ["latin"] });
-const openSans = Open_Sans({
-  weight: [ '300', '400'],
+
+const montserrat = Montserrat({
+  weight: ['100', '300', '400'],
   subsets: ['latin'],
 });
-const Projects = () => {
+const openSans = Open_Sans({
+  weight: ['300', '400'],
+  subsets: ['latin'],
+});
+
+const page = () => {
+    const [projects, setProjects] = useState([
+      {
+        project: './dico-gif.gif',
+        techno: 'next',
+      },
+      {
+        project: './gites-gif.gif',
+        techno: 'next',
+      },
+      {
+        project: './quizoo-gif.gif',
+        techno: 'react',
+      },
+    ]);
+    const [query, setQuery] = useState("")
+
+    const filteredProjects = projects.filter((project) => project.techno === query )
+    
+
   return (
-    <section id='projects' className='min-h-[100%]  projects text-center'>
+    <main id='projects-page' className='min-h-[100%]  projects text-center'>
       <h1
         className={clsx(
           openSans.className,
@@ -19,6 +44,10 @@ const Projects = () => {
       >
         Projects
       </h1>
+      <form> 
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
+<label htmlFor="vehicle1"> I have a bike</label><br></br>
+      </form>
       <div className='flex min-h-[100%] flex-col items-center justify-between lg:flex-row lg:justify-center flex-wrap  px-2'>
         <div className='p-5  w-[100%] lg:w-[30%] lg:h-96'>
           <Link
@@ -42,7 +71,7 @@ const Projects = () => {
           <Link
             className=''
             target={'_blank'}
-            href={'https://gites-gamma.vercel.app'}
+            href={'https://dico-ochre.vercel.app/'}
           >
             <div className=''>
               <img
@@ -64,7 +93,7 @@ const Projects = () => {
           <Link
             className=''
             target={'_blank'}
-            href={'https://dapper-belekoy-aa000e.netlify.app/'}
+            href={'https://dico-ochre.vercel.app/'}
           >
             <div className=''>
               <img
@@ -83,8 +112,8 @@ const Projects = () => {
           </Link>
         </div>
       </div>
-    </section>
+    </main>
   );
 };
 
-export default Projects;
+export default page;

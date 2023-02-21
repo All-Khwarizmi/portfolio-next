@@ -64,7 +64,7 @@ const Projects = () => {
           <Link
             className=''
             target={'_blank'}
-            href={'https://dapper-belekoy-aa000e.netlify.app/'}
+            href={'https://dico-ochre.vercel.app/'}
           >
             <div className=''>
               <img

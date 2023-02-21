@@ -49,7 +49,7 @@ const page = () => {
   return (
     <main
       id='projects-page'
-      className=' min-h-screen  projects text-center'
+      className='h-screen min-h-screen  projects text-center'
     >
       <h1
         className={clsx(
