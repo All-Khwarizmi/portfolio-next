@@ -11,10 +11,6 @@ const montserrat = Montserrat({ subsets: ['latin'] });
 const openSans = Open_Sans({ subsets: ['latin'] });
 const roboto = Roboto({ subsets: ['cyrillic'], weight: ['100', '300', '400'] });
 import Image from 'next/image';
-import { FaTwitterSquare } from 'react-icons/fa';
-import { BsGithub } from 'react-icons/bs';
-import { ImLinkedin } from 'react-icons/im';
-import { MdEmail } from 'react-icons/md';
 
 function MobileNav({ open, setOpen }: any) {
   const bg = useColorModeValue('white', 'white');
@@ -109,31 +105,41 @@ function MobileNav({ open, setOpen }: any) {
           justify='flex-end'
         >
           {' '}
-          <HStack spacing={10}>
-            <div className='hover:transform transition duration-500 hover:scale-125'>
-              <Link target={'_blank'} href='https://github.com/All-Khwarizmi'>
-                <BsGithub />
-              </Link>
-            </div>
-            <div className='hover:transform transition duration-500 hover:scale-125'>
-              <Link
-                target={'_blank'}
-                href='https://www.linkedin.com/in/jason-suarez/'
-              >
-                <ImLinkedin />
-              </Link>
-            </div>
-            <div className='hover:transform transition duration-500 hover:scale-125 hidden'>
-              <Link target={'_blank'} href=''>
-                <MdEmail />
-              </Link>
-            </div>
-
-            <div className='hover:hover:transform transition duration-500 hover:scale-125'>
-              <Link target={'_blank'} href='https://twitter.com/swarecito'>
-                <FaTwitterSquare className='h-10' />
-              </Link>
-            </div>
+          <HStack spacing={5}>
+            {' '}
+            <a
+              rel='noreferrer'
+              target={'_blank'}
+              href='https://www.facebook.com/gitesmontresor/?locale=fr_FR'
+            >
+              <IconButton
+                className='icon '
+                aria-label='Facebook'
+                icon={<SiFacebook />}
+              ></IconButton>
+            </a>{' '}
+            <a
+              rel='noreferrer'
+              target={'_blank'}
+              href='https://www.instagram.com/gitesmontresor/'
+            >
+              <IconButton
+                className='icon'
+                aria-label='Twitter'
+                icon={<SiInstagram />}
+              ></IconButton>
+            </a>
+            <a
+              rel='noreferrer'
+              target={'_blank'}
+              href='https://www.google.com/maps/place/Les+G%C3%AEtes+Mon+Tr%C3%A9sor/@16.4645595,-61.4847141,17z/data=!3m1!4b1!4m6!3m5!1s0x8c133104d554b2bd:0x36ef5cfef0b588d1!8m2!3d16.4645544!4d-61.4825254!16s%2Fg%2F11s7tslv7h'
+            >
+              <IconButton
+                className='icon'
+                aria-label='Maps'
+                icon={<SiGooglemaps />}
+              ></IconButton>
+            </a>
           </HStack>
         </Flex>
       </div>
@@ -180,9 +186,9 @@ const Navbar = () => {
             </a>
           </li>
         </ul>
-        <div className='h-full flex items-center px-4'>
+        <div className='px-3  py-3'>
           <div
-            className='relative z-50 flex h-6 w-8 flex-col items-center align-center justify-between lg:hidden'
+            className='relative z-50 flex h- w-8 flex-col items-center justify-between lg:hidden'
             onClick={() => {
               setOpen(!open);
             }}
@@ -190,7 +196,7 @@ const Navbar = () => {
             {/* hamburger button */}
             <span
               className={`h-1 w-full transform rounded-lg bg-black transition duration-300 ease-in-out ${
-                open ? 'translate-y-3 rotate-45' : ''
+                open ? 'translate-y-4 rotate-45' : ''
               }`}
             />
             <span
@@ -200,7 +206,7 @@ const Navbar = () => {
             />
             <span
               className={`h-1 w-full transform rounded-lg bg-black transition duration-300 ease-in-out ${
-                open ? '-translate-y-2 -rotate-45' : ''
+                open ? '-translate-y-4 -rotate-45' : ''
               }`}
             />
           </div>

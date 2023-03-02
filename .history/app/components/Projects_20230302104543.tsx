@@ -83,7 +83,7 @@ const Projects = () => {
           </Link>
         </div>
       </div>
-      <div className='lg:py-10'>
+      <div className='py-10'>
         <Link href='/projects' className=''>
           <button
             type='button'

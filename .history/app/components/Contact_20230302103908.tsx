@@ -15,7 +15,7 @@ const Contact = () => {
           <h3 className='text-3xl italic pt-2'>How do you take your coffee?</h3>
         </div>
         <div className='flex justify-center text-3xl gap-5'>
-          <div className='hover:transform transition duration-500 hover:scale-125'>
+          <div className='hover:'>
             <Link href='https://github.com/All-Khwarizmi'>
               <BsGithub />
             </Link>

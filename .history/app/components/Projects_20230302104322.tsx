@@ -83,16 +83,9 @@ const Projects = () => {
           </Link>
         </div>
       </div>
-      <div className='lg:py-10'>
-        <Link href='/projects' className=''>
-          <button
-            type='button'
-            className='uppercase  py-2 px-3 bg-gray-800 hover:bg-red-800'
-          >
-            Show All
-          </button>
-        </Link>
-      </div>
+      <Link href='/projects' className=''>
+        <button type='button' className='uppercase lg:pt-10 py-2 px-3 bg-gray-800 hover:bg-red-800'>Show All</button>
+      </Link>
     </section>
   );
 };

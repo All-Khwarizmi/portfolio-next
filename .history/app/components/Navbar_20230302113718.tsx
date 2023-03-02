@@ -11,10 +11,6 @@ const montserrat = Montserrat({ subsets: ['latin'] });
 const openSans = Open_Sans({ subsets: ['latin'] });
 const roboto = Roboto({ subsets: ['cyrillic'], weight: ['100', '300', '400'] });
 import Image from 'next/image';
-import { FaTwitterSquare } from 'react-icons/fa';
-import { BsGithub } from 'react-icons/bs';
-import { ImLinkedin } from 'react-icons/im';
-import { MdEmail } from 'react-icons/md';
 
 function MobileNav({ open, setOpen }: any) {
   const bg = useColorModeValue('white', 'white');
@@ -109,29 +105,33 @@ function MobileNav({ open, setOpen }: any) {
           justify='flex-end'
         >
           {' '}
-          <HStack spacing={10}>
-            <div className='hover:transform transition duration-500 hover:scale-125'>
-              <Link target={'_blank'} href='https://github.com/All-Khwarizmi'>
-                <BsGithub />
-              </Link>
-            </div>
-            <div className='hover:transform transition duration-500 hover:scale-125'>
-              <Link
-                target={'_blank'}
-                href='https://www.linkedin.com/in/jason-suarez/'
-              >
-                <ImLinkedin />
-              </Link>
-            </div>
-            <div className='hover:transform transition duration-500 hover:scale-125 hidden'>
-              <Link target={'_blank'} href=''>
-                <MdEmail />
-              </Link>
-            </div>
-
+          <HStack spacing={5}>
+            {' '}
+            <a
+              rel='noreferrer'
+              target={'_blank'}
+              href='https://www.facebook.com/gitesmontresor/?locale=fr_FR'
+            >
+              <IconButton
+                className='icon '
+                aria-label='Facebook'
+                icon={<SiFacebook />}
+              ></IconButton>
+            </a>{' '}
+            <a
+              rel='noreferrer'
+              target={'_blank'}
+              href='https://www.instagram.com/gitesmontresor/'
+            >
+              <IconButton
+                className='icon'
+                aria-label='Twitter'
+                icon={<SiInstagram />}
+              ></IconButton>
+            </a>
             <div className='hover:hover:transform transition duration-500 hover:scale-125'>
-              <Link target={'_blank'} href='https://twitter.com/swarecito'>
-                <FaTwitterSquare className='h-10' />
+              <Link href='https://twitter.com/swarecito'>
+                <FaTwitterSquare />
               </Link>
             </div>
           </HStack>

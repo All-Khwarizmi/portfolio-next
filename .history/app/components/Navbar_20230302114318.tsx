@@ -111,7 +111,7 @@ function MobileNav({ open, setOpen }: any) {
           {' '}
           <HStack spacing={10}>
             <div className='hover:transform transition duration-500 hover:scale-125'>
-              <Link target={'_blank'} href='https://github.com/All-Khwarizmi'>
+              <Link href='https://github.com/All-Khwarizmi'>
                 <BsGithub />
               </Link>
             </div>

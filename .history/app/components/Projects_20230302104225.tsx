@@ -19,7 +19,7 @@ const Projects = () => {
       >
         Projects
       </h1>
-      <div className='flex min-h-[100%] flex-col items-center justify-between lg:flex-row lg:justify-center flex-wrap  px-2'>
+      <div className='flex min-h-[100%] flex-col items-center justify-between lg:flex-row lg:justify-center flex-wrap gap-5 px-2'>
         <div className='p-5  w-[100%] lg:w-[30%] lg:h-96'>
           <Link
             className=''
@@ -83,16 +83,9 @@ const Projects = () => {
           </Link>
         </div>
       </div>
-      <div className='lg:py-10'>
-        <Link href='/projects' className=''>
-          <button
-            type='button'
-            className='uppercase  py-2 px-3 bg-gray-800 hover:bg-red-800'
-          >
-            Show All
-          </button>
-        </Link>
-      </div>
+      <Link href='/projects'>
+        <button type='button' className='uppercase lg:pt-10 py-2 px-3 bg-gray-800 hover:bg-red-800'>Show All</button>
+      </Link>
     </section>
   );
 };

@@ -12,9 +12,6 @@ const openSans = Open_Sans({ subsets: ['latin'] });
 const roboto = Roboto({ subsets: ['cyrillic'], weight: ['100', '300', '400'] });
 import Image from 'next/image';
 import { FaTwitterSquare } from 'react-icons/fa';
-import { BsGithub } from 'react-icons/bs';
-import { ImLinkedin } from 'react-icons/im';
-import { MdEmail } from 'react-icons/md';
 
 function MobileNav({ open, setOpen }: any) {
   const bg = useColorModeValue('white', 'white');
@@ -109,9 +106,9 @@ function MobileNav({ open, setOpen }: any) {
           justify='flex-end'
         >
           {' '}
-          <HStack spacing={10}>
+          <HStack spacing={5}>
             <div className='hover:transform transition duration-500 hover:scale-125'>
-              <Link target={'_blank'} href='https://github.com/All-Khwarizmi'>
+              <Link href='https://github.com/All-Khwarizmi'>
                 <BsGithub />
               </Link>
             </div>
@@ -124,14 +121,14 @@ function MobileNav({ open, setOpen }: any) {
               </Link>
             </div>
             <div className='hover:transform transition duration-500 hover:scale-125 hidden'>
-              <Link target={'_blank'} href=''>
+              <Link href=''>
                 <MdEmail />
               </Link>
             </div>
 
             <div className='hover:hover:transform transition duration-500 hover:scale-125'>
-              <Link target={'_blank'} href='https://twitter.com/swarecito'>
-                <FaTwitterSquare className='h-10' />
+              <Link href='https://twitter.com/swarecito'>
+                <FaTwitterSquare />
               </Link>
             </div>
           </HStack>
