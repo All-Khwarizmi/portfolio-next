@@ -13,7 +13,7 @@ const Projects = () => {
     <section id='projects' className='min-h-[100%]  projects text-center'>
       <h1
         className={clsx(
-          
+          ,
           'text-5xl grid content-center py-20 font-bold'
         )}
       >

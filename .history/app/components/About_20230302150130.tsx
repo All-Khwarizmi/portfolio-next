@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div id='timeline' className='min-h-screen w-screen about'>
       <div className="text-center">
-        <h1 className={clsx('text-5xl grid content-center py-20 pb-10 font-bold')}>
+        <h1 className={clsx('text-5xl grid content-center py-0 font-bold')}>
           Timeline
         </h1>
       </div>
