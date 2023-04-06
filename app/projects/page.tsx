@@ -3,6 +3,7 @@ import { Inter, Montserrat, Open_Sans, Roboto } from '@next/font/google';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { useState, useEffect, use } from 'react';
+import ProjectCard from '../components/ProjectCard';
 
 const montserrat = Montserrat({
   weight: ['100', '300', '400'],
@@ -19,11 +20,27 @@ const page = () => {
       gif: './dico-gif.gif',
       name: 'Dico',
       techno: 'next',
-      href: 'https://dico-ochre.vercel.app/',
+      href: 'https://dico-uno.vercel.app/',
+      docs: 'https://github.com/All-Khwarizmi/Dico',
+    },
+    {
+      gif: 'https://quizoo-espanol.vercel.app/',
+      name: 'QuizoO',
+      techno: 'next',
+      href: 'https://quizoo-espanol.vercel.app/',
+      docs: 'https://github.com/All-Khwarizmi/Quiz-Sanity',
+    },
+    {
+      gif: 'https://recall-api.vercel.app/',
+      name: 'Recal',
+      techno: 'next',
+      href: 'https://recall-api.vercel.app/',
+      docs: 'https://github.com/All-Khwarizmi/-Recall-API-',
     },
     {
       gif: './gites-gif.gif',
       name: 'Gîtes Mon Trésor',
+      docs: 'https://github.com/All-Khwarizmi/gites-v2',
       techno: 'next',
       href: 'https://gites-mon-tresor-guadeloupe.com/',
     },
@@ -32,6 +49,35 @@ const page = () => {
       name: 'QuizoO',
       techno: 'react',
       href: 'https://dapper-belekoy-aa000e.netlify.app/',
+      docs: 'https://github.com/All-Khwarizmi/QuizoO',
+    },
+    {
+      gif: 'https://codice-it.vercel.app/decks',
+      name: 'Codice',
+      techno: 'next',
+      href: 'https://codice-it.vercel.app/decks',
+      docs: 'https://github.com/All-Khwarizmi/codice',
+    },
+    {
+      gif: 'https://all-khwarizmi.github.io/RandomQuote2/',
+      name: 'Random Quote',
+      techno: 'vanilla',
+      href: 'https://all-khwarizmi.github.io/RandomQuote2/',
+      docs: 'https://github.com/All-Khwarizmi/RandomQuote2',
+    },
+    {
+      gif: 'https://all-khwarizmi.github.io/random-react/',
+      name: 'Random Quote',
+      techno: 'react',
+      href: 'https://all-khwarizmi.github.io/random-react/',
+      docs: 'https://github.com/All-Khwarizmi/random-react',
+    },
+    {
+      gif: 'https://main--incomparable-froyo-cd9602.netlify.app/',
+      name: 'Markdown Viewer',
+      techno: 'react',
+      href: 'https://main--incomparable-froyo-cd9602.netlify.app/',
+      docs: 'https://github.com/All-Khwarizmi/Markdown-Viewer',
     },
   ]);
   const [query, setQuery] = useState('all');
@@ -82,62 +128,25 @@ const page = () => {
             return (
               <div
                 key={project.name}
-                className='p-5  w-[100%] lg:w-[30%] lg:h-96'
+                className='p-5 '
               >
-                <Link
-                  prefetch={false}
-                  className=''
-                  target={'_blank'}
-                  href={` ${project.href} `}
-                >
-                  <div className=''>
-                    <img
-                      className='rounded w-[100%]  rounded-bl-none rounded-br-none'
-                      src={` ${project.gif} `}
-                      alt='project'
-                    />
-                  </div>
-                  <h1
-                    className={clsx(
-                      montserrat.className,
-                      'project-caption py-5 '
-                    )}
-                  >
-                    {project.name}
-                  </h1>
-                </Link>
+                <ProjectCard
+                  url={project.href}
+                  name={project.name}
+                  docs={project.docs}
+                />
               </div>
             );
           })}
         {query !== 'all' &&
           filteredProjects.map((project) => {
             return (
-              <div
-                key={project.name}
-                className='p-5  w-[100%] lg:w-[30%] lg:h-96'
-              >
-                <Link
-                  prefetch={false}
-                  className=''
-                  target={'_blank'}
-                  href={` ${project.href} `}
-                >
-                  <div className=''>
-                    <img
-                      className='rounded  w-[100%] rounded-bl-none rounded-br-none'
-                      src={` ${project.gif} `}
-                      alt='project'
-                    />
-                  </div>
-                  <h1
-                    className={clsx(
-                      montserrat.className,
-                      'project-caption py-5 '
-                    )}
-                  >
-                    {project.name}
-                  </h1>
-                </Link>
+              <div key={project.name} className='p-5 '>
+                <ProjectCard
+                  url={project.href}
+                  name={project.name}
+                  docs={project.docs}
+                />
               </div>
             );
           })}

@@ -23,19 +23,16 @@ const ProjectCard = ({url, name, docs }: AppProps) => {
 
       <div className='flex justify-center project-caption'>
         <Link
+          target={'_blank'}
           className={clsx(
             montserrat.className,
             ' justify-center items-center w-full flex p-5 h-full '
           )}
           href={url}
         >
-          <h1
-            
-          >
-            {name}
-          </h1>
+          <h1>{name}</h1>
         </Link>
-        <Link href={docs}>
+        <Link href={docs} target={'_blank'}>
           <h1 className={clsx(montserrat.className, ' p-5 ')}>
             <AiOutlineGithub className='text-2xl' />
           </h1>
