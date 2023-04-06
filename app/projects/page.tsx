@@ -1,22 +1,27 @@
 'use client';
-import { Inter, Montserrat, Open_Sans, Roboto } from '@next/font/google';
+import { Open_Sans } from '@next/font/google';
 import clsx from 'clsx';
-import Link from 'next/link';
-import { useState, useEffect, use } from 'react';
+import { useState} from 'react';
 import ProjectCard from '../components/ProjectCard';
 import { v4 as uuidv4 } from 'uuid';
+import { NextPage } from 'next';
+import Footer from '../components/Footer';
 
-const montserrat = Montserrat({
-  weight: ['100', '300', '400'],
-  subsets: ['latin'],
-});
 const openSans = Open_Sans({
   weight: ['300', '400'],
   subsets: ['latin'],
 });
 
-const page = () => {
-  const [projects, setProjects] = useState([
+type Projects = {
+  gif: string
+  name: string
+  techno: string
+  href: string
+  docs: string
+}
+
+const page: NextPage = () => {
+  const [projects, setProjects] = useState<Projects[]>([
     {
       gif: './dico-gif.gif',
       name: 'Dico',
@@ -91,10 +96,7 @@ const page = () => {
   };
 
   return (
-    <main
-      id='projects-page'
-      className=' min-h-screen  projects text-center'
-    >
+    <main id='projects-page' className=' min-h-screen  projects text-center'>
       <h1
         className={clsx(
           openSans.className,
@@ -146,6 +148,7 @@ const page = () => {
             );
           })}
       </div>
+      <Footer />
     </main>
   );
 };

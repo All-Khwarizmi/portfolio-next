@@ -1,23 +1,25 @@
-'use client';
+'use client'
+
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { Inter, Montserrat, Open_Sans, Roboto } from '@next/font/google';
+import { Montserrat, Open_Sans } from '@next/font/google';
 import { clsx } from 'clsx';
-import { Flex, HStack, IconButton, useColorModeValue } from '@chakra-ui/react';
-import { SiFacebook, SiGooglemaps, SiInstagram } from 'react-icons/si';
-
-const inter = Inter({ subsets: ['latin'] });
-const montserrat = Montserrat({ subsets: ['latin'] });
-const openSans = Open_Sans({ subsets: ['latin'] });
-const roboto = Roboto({ subsets: ['cyrillic'], weight: ['100', '300', '400'] });
-import Image from 'next/image';
+import { Flex, HStack, useColorModeValue } from '@chakra-ui/react';
 import { FaTwitterSquare } from 'react-icons/fa';
 import { BsGithub } from 'react-icons/bs';
 import { ImLinkedin } from 'react-icons/im';
 import { MdEmail } from 'react-icons/md';
 
-function MobileNav({ open, setOpen }: any) {
-  const bg = useColorModeValue('white', 'white');
+const montserrat = Montserrat({ subsets: ['latin'] });
+const openSans = Open_Sans({ subsets: ['latin'] });
+
+type Props = {
+  open: boolean
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+function MobileNav({ open, setOpen }: Props) {
+
   return (
     <nav
       className={`absolute top-0 left-0 text-black landing text-white h-screen w-screen transform  ${

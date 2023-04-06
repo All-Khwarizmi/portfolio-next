@@ -4,6 +4,7 @@ import { ImLinkedin } from 'react-icons/im';
 import { MdEmail } from 'react-icons/md';
 import { FaTwitterSquare } from 'react-icons/fa';
 import Link from 'next/link';
+import Footer from './Footer';
 
 
 const Contact = () => {
@@ -41,9 +42,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <footer className='bg-inherit h-20 flex items-center justify-center'>
-        <p>Copyright &copy; {new Date().getFullYear()} </p>
-      </footer>
+     <Footer />
     </section>
   );
 }
