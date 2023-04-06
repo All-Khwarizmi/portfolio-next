@@ -83,10 +83,7 @@ const page = () => {
   ]);
   const [query, setQuery] = useState('all');
 
-
-
   let filteredProjects = projects.filter((project) => project.techno === query);
-
 
   const handleCheck = (e: any) => {
     console.log(e.target.value);
@@ -127,7 +124,7 @@ const page = () => {
         {query === 'all' &&
           projects.map((project) => {
             return (
-              <div key={uuidv4()} className='p-5 '>
+              <div key={uuidv4()} className=' '>
                 <ProjectCard
                   url={project.href}
                   name={project.name}
@@ -139,7 +136,7 @@ const page = () => {
         {query !== 'all' &&
           filteredProjects.map((project) => {
             return (
-              <div key={uuidv4()} className='p-5 '>
+              <div key={uuidv4()} className=' '>
                 <ProjectCard
                   url={project.href}
                   name={project.name}
