@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Iframe from 'react-iframe';
 import { Inter, Montserrat, Open_Sans, Roboto } from '@next/font/google';
 import Link from 'next/link';
@@ -17,9 +17,24 @@ type AppProps = {
   docs: string
 };
 const ProjectCard = ({url, name, docs }: AppProps) => {
+    const [windowWitdh, setWindowWitdh] = useState<number>(window.innerWidth);
+    let winWidthVar = window.innerWidth;
+    useEffect(() => {
+      const handleWindowResize = () => {
+        setWindowWitdh(window.innerWidth);
+      };
+
+      window.addEventListener('resize', handleWindowResize);
+
+      return () => {
+        window.removeEventListener('resize', handleWindowResize);
+      };
+    });
+   
+    console.log('windowWitdh', winWidthVar);
   return (
     <div className=''>
-      <Iframe url={url} name={name} height='500px' width='500px'></Iframe>
+      <Iframe url={url} name={name} height='500px' width={windowWitdh < 600 ? "375px": "500px"}></Iframe>
 
       <div className='flex justify-center project-caption'>
         <Link
