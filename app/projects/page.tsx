@@ -4,7 +4,6 @@ import clsx from 'clsx';
 import { useState} from 'react';
 import ProjectCard from '../components/ProjectCard';
 import { v4 as uuidv4 } from 'uuid';
-import { NextPage } from 'next';
 import Footer from '../components/Footer';
 
 const openSans = Open_Sans({
@@ -20,7 +19,7 @@ type Projects = {
   docs: string
 }
 
-const page: NextPage = () => {
+const page= () => {
   const [projects, setProjects] = useState<Projects[]>([
     {
       gif: './dico-gif.gif',
