@@ -105,7 +105,7 @@ const page = () => {
       </h1>
       <form
         onChange={(e) => handleCheck(e)}
-        className='flex flex-row gap-5 justify-center'
+        className='flex flex-row gap-5 p-5 justify-center'
       >
         <input defaultChecked type='radio' id='all' name='techno' value='all' />
         <label htmlFor='all'> All</label>
@@ -120,7 +120,7 @@ const page = () => {
         <label htmlFor='next'> Next</label>
         <br></br>
       </form>
-      <div className='flex min-h-[100%] flex-col items-center justify-between lg:flex-row lg:justify-center flex-wrap  px-2'>
+      <div className='flex min-h-[100%] flex-col items-center justify-between lg:flex-row lg:justify-center flex-wrap gap-5 lg:gap-20 px-2'>
         {query === 'all' &&
           projects.map((project) => {
             return (
