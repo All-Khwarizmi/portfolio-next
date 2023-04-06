@@ -1,11 +1,11 @@
-'use client'
+'use client';
+
 import clsx from 'clsx';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import Iframe from 'react-iframe';
 import { Inter, Montserrat, Open_Sans, Roboto } from '@next/font/google';
 import Link from 'next/link';
 import { AiOutlineGithub } from 'react-icons/ai';
-
 
 const montserrat = Montserrat({
   weight: ['100', '300', '400'],
@@ -15,27 +15,33 @@ const montserrat = Montserrat({
 type AppProps = {
   url: string;
   name: string;
-  docs: string
+  docs: string;
 };
-const ProjectCard = ({url, name, docs }: AppProps) => {
-    const [windowWitdh, setWindowWitdh] = useState<number>(window.innerWidth);
-    let winWidthVar = window.innerWidth;
-    useEffect(() => {
-      const handleWindowResize = () => {
-        setWindowWitdh(window.innerWidth);
-      };
+const ProjectCard = ({ url, name, docs }: AppProps) => {
+/*   const [windowWitdh, setWindowWitdh] = useState<number>(window.innerWidth);
+  let winWidthVar = window.innerWidth;
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowWitdh(window.innerWidth);
+    };
 
-      window.addEventListener('resize', handleWindowResize);
+    window.addEventListener('resize', handleWindowResize);
 
-      return () => {
-        window.removeEventListener('resize', handleWindowResize);
-      };
-    });
-   
-    console.log('windowWitdh', winWidthVar);
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }); */
+
+ //console.log('windowWitdh', winWidthVar);
   return (
     <div className=''>
-      <Iframe url={url} name={name} height='500px' width={windowWitdh < 600 ? "375px": "500px"}></Iframe>
+      <Iframe
+        url={url}
+        name={name}
+        height='500px'
+        width={typeof window !== "undefined" ? 
+         window.innerWidth  < 600 ? '375px' : '500px' : "375px"}
+      ></Iframe>
 
       <div className='flex justify-center project-caption'>
         <Link
@@ -56,6 +62,6 @@ const ProjectCard = ({url, name, docs }: AppProps) => {
       </div>
     </div>
   );
-}
+};
 
-export default ProjectCard
+export default ProjectCard;

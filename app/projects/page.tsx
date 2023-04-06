@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import Link from 'next/link';
 import { useState, useEffect, use } from 'react';
 import ProjectCard from '../components/ProjectCard';
+import { v4 as uuidv4 } from 'uuid';
 
 const montserrat = Montserrat({
   weight: ['100', '300', '400'],
@@ -126,10 +127,7 @@ const page = () => {
         {query === 'all' &&
           projects.map((project) => {
             return (
-              <div
-                key={project.name}
-                className='p-5 '
-              >
+              <div key={uuidv4()} className='p-5 '>
                 <ProjectCard
                   url={project.href}
                   name={project.name}
@@ -141,7 +139,7 @@ const page = () => {
         {query !== 'all' &&
           filteredProjects.map((project) => {
             return (
-              <div key={project.name} className='p-5 '>
+              <div key={uuidv4()} className='p-5 '>
                 <ProjectCard
                   url={project.href}
                   name={project.name}
