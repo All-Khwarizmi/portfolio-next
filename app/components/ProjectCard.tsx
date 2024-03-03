@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import clsx from 'clsx';
-import Iframe from 'react-iframe';
-import { Montserrat} from '@next/font/google';
-import Link from 'next/link';
-import { AiOutlineGithub } from 'react-icons/ai';
+import clsx from "clsx";
+import Iframe from "react-iframe";
+import { Montserrat } from "@next/font/google";
+import Link from "next/link";
+import { AiOutlineGithub } from "react-icons/ai";
 
 const montserrat = Montserrat({
-  weight: ['100', '300', '400'],
-  subsets: ['latin'],
+  weight: ["100", "300", "400"],
+  subsets: ["latin"],
 });
 
 type AppProps = {
@@ -18,35 +18,44 @@ type AppProps = {
 };
 const ProjectCard = ({ url, name, docs }: AppProps) => {
   return (
-    <div className=''>
+    <div className="">
       <Iframe
         url={url}
         name={name}
-        height='500px'
+        height="500px"
         width={
-          typeof window !== 'undefined'
+          typeof window !== "undefined"
             ? window.innerWidth < 600
-              ? '375px'
-              : '500px'
-            : '375px'
+              ? "375px"
+              : "500px"
+            : "375px"
         }
       ></Iframe>
 
-      <div className='flex justify-center project-caption'>
+      <div className="flex flex-col project-caption">
         <Link
-          target={'_blank'}
+          target={"_blank"}
           className={clsx(
             montserrat.className,
-            ' justify-center items-center w-full flex p-5 h-full '
+            " justify-center items-center w-full flex pt-5 pb-3 h-full hover:bg-red-800"
           )}
           href={url}
         >
-          <h1>{name}</h1>
+          <p>{name}</p>
         </Link>
-        <Link href={docs} target={'_blank'}>
-          <h1 className={clsx(montserrat.className, ' p-5 ')}>
-            <AiOutlineGithub className='text-2xl' />
-          </h1>
+        <Link
+          href={docs}
+          target={"_blank"}
+          className="hover:bg-red-800 pb-5 pt-3"
+        >
+          <p
+            className={clsx(
+              montserrat.className,
+              "flex justify-center h-full  "
+            )}
+          >
+            <AiOutlineGithub className="text-2xl" />
+          </p>
         </Link>
       </div>
     </div>
