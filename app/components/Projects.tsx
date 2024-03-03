@@ -1,7 +1,6 @@
-
-import clsx from 'clsx';
-import Link from 'next/link';
-import ProjectCard from './ProjectCard';
+import clsx from "clsx";
+import Link from "next/link";
+import ProjectCard from "./ProjectCard";
 
 const Projects = () => {
   return (
@@ -28,7 +27,7 @@ const Projects = () => {
       </div>
       <div className="p-3"></div>
       <div className="lg:py-10">
-        <Link href="/projects" className="">
+        <Link href="/projects" className="shadow-black shadow-xl">
           <button
             type="button"
             className="uppercase  py-2 px-3 bg-gray-800 hover:bg-red-800"

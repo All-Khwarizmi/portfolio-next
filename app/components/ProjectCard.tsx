@@ -18,8 +18,9 @@ type AppProps = {
 };
 const ProjectCard = ({ url, name, docs }: AppProps) => {
   return (
-    <div className="">
+    <div className="shadow-xl shadow-black rounded-lg">
       <Iframe
+        className="rounded-t-lg"
         url={url}
         name={name}
         height="500px"
@@ -32,7 +33,7 @@ const ProjectCard = ({ url, name, docs }: AppProps) => {
         }
       ></Iframe>
 
-      <div className="flex flex-col project-caption">
+      <div className="flex flex-col project-caption rounded-b-lg">
         <Link
           target={"_blank"}
           className={clsx(

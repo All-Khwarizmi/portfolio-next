@@ -5,7 +5,7 @@
 :root {
   --bleu: #C9D6DF;
   --red: #BE1E34;
-  --gray: #393837;
+  --gray: #52616B;
   --gray2: #333333;
   --gradient: linear-gradient(27deg, var(--colorOne) 0%, var(--colorTwo) 100%);
   --redTheme: #222;
@@ -135,10 +135,13 @@ a {
 
 .projects {
   background-color: var(--bleu);
+  background-image: url("../public/wave2.svg");
+  background-repeat: no-repeat;
+  background-position-y: bottom;
 }
 
 .about {
-  background-color: var(--bleu);
+  background-color: var(--gray);
 }
 
 .contact {
