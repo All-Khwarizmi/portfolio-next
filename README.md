@@ -1,9 +1,8 @@
 
 # Jason's portfolio
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+The website is available [here](www.jason-suarez.com/)
 
-### Helpers
 
 #### Styling 
 
@@ -35,13 +34,6 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
         />
 ```
 
-#### Blog
-**Sanity as backend for headless CMS**
--  [Sanity.io starter guide](https://www.sanity.io/docs/create-a-sanity-project?slug=get-started)
--  []()
--  []()
--  []()
--  []()
 
 #### CV
 **Embed a timeline as CV && About me section**
