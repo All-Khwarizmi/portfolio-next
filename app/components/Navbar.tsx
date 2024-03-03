@@ -21,7 +21,7 @@ type Props = {
 function MobileNav({ open, setOpen }: Props) {
   return (
     <nav
-      className={`absolute top-0 left-0 text-black landing text-white h-screen w-screen transform  ${
+      className={`absolute top-0 left-0  text-white h-screen w-screen transform  ${
         open ? "-translate-x-0" : "-translate-x-full"
       } drop-shadow-md filter overflow-y-scroll transition-transform duration-300 ease-in-out `}
     >
