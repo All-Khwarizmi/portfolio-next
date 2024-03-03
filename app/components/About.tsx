@@ -8,7 +8,7 @@ const About = () => {
           Timeline
         </h1>
       </div>
-      <div className=' grid place-items-center lg:block rounded-xl lg:w-full'>
+      <div className='timeline grid place-items-center lg:block rounded-xl lg:w-full'>
         <div className='flex w-[100%] pt-10 justify-center items-center'>
           <iframe
             className='w-[95%] lg:w-full rounded'
