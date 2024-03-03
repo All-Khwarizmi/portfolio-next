@@ -30,7 +30,7 @@ const Projects = () => {
         <Link href="/projects" className="shadow-black shadow-xl">
           <button
             type="button"
-            className="uppercase  py-2 px-3 bg-gray-800 hover:bg-red-800"
+            className="uppercase text-gray-700 hover:text-white  rounded-sm py-2 px-3 bg-[#C9D6DF] hover:bg-[#52616B]"
           >
             Show All
           </button>
