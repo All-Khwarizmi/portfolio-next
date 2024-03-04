@@ -18,8 +18,9 @@ type AppProps = {
 };
 const ProjectCard = ({ url, name, docs }: AppProps) => {
   return (
-    <div className="">
+    <div className="shadow-xl bg-[#1E2022]  z-10 shadow-black rounded-lg">
       <Iframe
+        className="rounded-t-lg"
         url={url}
         name={name}
         height="500px"
@@ -32,12 +33,12 @@ const ProjectCard = ({ url, name, docs }: AppProps) => {
         }
       ></Iframe>
 
-      <div className="flex flex-col project-caption">
+      <div className="flex bg-[#1E2022] flex-col project-caption rounded-b-lg">
         <Link
           target={"_blank"}
           className={clsx(
             montserrat.className,
-            " justify-center items-center w-full flex pt-5 pb-3 h-full hover:bg-red-800"
+            " justify-center items-center w-full flex pt-5 pb-3 h-full hover:bg-[#52616B]"
           )}
           href={url}
         >
@@ -46,7 +47,7 @@ const ProjectCard = ({ url, name, docs }: AppProps) => {
         <Link
           href={docs}
           target={"_blank"}
-          className="hover:bg-red-800 pb-5 pt-3"
+          className="hover:bg-[#52616B] pb-5 pt-3"
         >
           <p
             className={clsx(
@@ -54,7 +55,7 @@ const ProjectCard = ({ url, name, docs }: AppProps) => {
               "flex justify-center h-full  "
             )}
           >
-            <AiOutlineGithub className="text-2xl" />
+            <AiOutlineGithub className="text-2xl " />
           </p>
         </Link>
       </div>

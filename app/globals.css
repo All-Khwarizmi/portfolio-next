@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --bleu: #4B567B;
+  --bleu: #C9D6DF;
   --red: #BE1E34;
-  --gray: #393837;
-  --gray2: #333333;
+  --gray: #52616B;
+  --black: #1E2022;
   --gradient: linear-gradient(27deg, var(--colorOne) 0%, var(--colorTwo) 100%);
   --redTheme: #222;
   --max-width: 1100px;
@@ -127,26 +127,43 @@ a {
 
 
 .landing {
-  background: rgb(79, 79, 79);
-  background: linear-gradient(
-    14deg,
-    rgba(79, 79, 79, 1) 0%,
-    rgba(9, 8, 8, 1) 100%
-  );
+  background: rgb(82, 97, 107);
+  background-image: url("../public/wave.svg");
+  background-repeat: no-repeat;
+  background-position-y: bottom;
 }
 
 .projects {
   background-color: var(--bleu);
+  background-image: url("../public/wave2.svg");
+  background-repeat: no-repeat;
+  background-position-y: bottom;
 }
 
 .about {
-  background-color: var(--bleu);
+  background-color: var(--gray);
+  background-image: url("../public/wave.svg");
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    
+}
+
+.timeline {
+  background-color: var(--gray);
+  
 }
 
 .contact {
   background-color: var(--gray);
+  background-image: url("../public/wave3.svg");
+    background-repeat: no-repeat;
+    background-position-y: bottom;
 }
 
 .project-caption {
   background-color: var(--gray2);
+}
+
+.footer {
+  background-color: var(--black);
 }
