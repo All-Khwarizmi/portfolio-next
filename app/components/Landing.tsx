@@ -1,22 +1,23 @@
+import { clsx } from "clsx";
+import { Montserrat, Open_Sans } from "@next/font/google";
 
-import { clsx } from 'clsx';
-import { Montserrat, Open_Sans } from '@next/font/google';
-
-
-const montserrat = Montserrat({ subsets: ['latin'] });
-const openSans = Open_Sans({ subsets: ['latin'] });
+const montserrat = Montserrat({ subsets: ["latin"] });
+const openSans = Open_Sans({ subsets: ["latin"] });
 
 const Landing = () => {
   return (
-    <div id='landing' className='h-screen landing flex items-center justify-center '>
+    <div
+      id="landing"
+      className="h-screen landing flex items-center justify-center "
+    >
       <div>
-        <h1 className={clsx(openSans.className, 'text-5xl font-bold pb-3')}>
+        <h1 className={clsx(openSans.className, "text-5xl font-bold pb-3")}>
           Hi, I'm Jason
         </h1>
         <h3
           className={clsx(
             montserrat.className,
-            'text-center italic text-red-700 text-2xl '
+            "text-center italic text-[#C9D6DF]  text-2xl "
           )}
         >
           A web developer
