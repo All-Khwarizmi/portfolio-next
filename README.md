@@ -8,7 +8,7 @@ The website is available [here](www.jason-suarez.com/)
 
 -  [https://cssgradient.io/](https://cssgradient.io/)
 -  [color palette](https://colorhunt.co/palette/f0f5f9c9d6df52616b1e2022)
--  []()
+-  [waves](https://getwaves.io/)
 -  []()
 -  []()
 #### Font
