@@ -7,7 +7,7 @@ const Projects = () => {
     <section id="projects" className="min-h-[100%]  projects text-center">
       <h1
         className={clsx(
-          "text-5xl grid text-[#52616B] content-center py-20 font-bold"
+          "text-5xl grid text-[#52616B] content-center py-12 font-bold"
         )}
       >
         Projects
@@ -29,7 +29,7 @@ const Projects = () => {
           docs={"https://github.com/All-Khwarizmi/Dico"}
         />
       </div>
-      <div className="p-3"></div>
+      <div className="p-10 lg:p-5"></div>
       <div className="lg:py-10">
         <Link href="/projects" className="shadow-black shadow-xl">
           <button
