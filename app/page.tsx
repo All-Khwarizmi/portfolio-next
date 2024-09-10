@@ -1,15 +1,17 @@
-import About from "./components/About";
 import Contact from "./components/Contact";
-import Landing from "./components/Landing";
-import Projects from "./components/Projects";
+import AboveFold from "./components/design/AboveFold";
+import IdeasSection from "./components/design/IdeasSection";
+import ProjectsSection from "./components/design/ProjectsSection";
+import SkillsSection from "./components/design/SkillsSection";
 
 export default function Home() {
   return (
     <>
       {" "}
-      <Landing />
-      <Projects />
-      <About />
+      <AboveFold />
+      <ProjectsSection />
+      <IdeasSection />
+      <SkillsSection />
       <Contact />
     </>
   );
