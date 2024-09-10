@@ -32,7 +32,7 @@ export default function IdeasSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text">
+          <span className="bg-gradient-to-r from-blue-400  to-purple-400 text-transparent bg-clip-text">
             How I Bring Ideas to Life
           </span>
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-25 blur-xl -z-10" />

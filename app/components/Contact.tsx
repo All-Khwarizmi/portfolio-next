@@ -1,12 +1,10 @@
 "use client";
-
 import { motion } from "framer-motion";
 import { BsGithub } from "react-icons/bs";
 import { ImLinkedin } from "react-icons/im";
 import { MdEmail } from "react-icons/md";
 import { FaTwitterSquare } from "react-icons/fa";
 import Link from "next/link";
-import Footer from "./Footer";
 
 interface ContactLink {
   href: string;
@@ -102,9 +100,9 @@ const Contact = () => {
               get back to you as soon as possible.
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <button className="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold py-3 px-8 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 shadow-lg relative group">
+              <button className="bg-gradient-to-r from-green-400 to-teal-500 text-white font-semibold py-3 px-8 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50 shadow-lg relative group">
                 Send Me a Message
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-0 group-hover:opacity-25 blur-md transition duration-300 ease-in-out" />
+                <div className="absolute inset-0 bg-gradient-to-r from-green-300 to-teal-400 rounded-full opacity-0 group-hover:opacity-25 blur-md transition duration-300 ease-in-out" />
               </button>
             </motion.div>
           </motion.div>

@@ -15,48 +15,64 @@ interface Project {
 
 const projects: Project[] = [
   {
-    name: "Project XYZ",
+    name: "Dico",
     description:
-      "Developed a web app for managing team projects, focusing on simplicity and real-time collaboration.",
+      "Création d'un dictionnaire web français-espagnol permettant la recherche de mots dans les deux sens grâce à l'API PONS. Le projet vise à aider les étudiants à utiliser efficacement les outils linguistiques.",
     challenges:
-      "Overcame issues with integrating real-time collaboration features and handling complex user permissions.",
+      "Surmonter les limitations d'usage de l'API PONS et optimiser les performances de recherche afin de réduire les appels API et améliorer la rapidité des réponses.",
     learned:
-      "Improved my skills in managing state with Redux and implementing WebSocket connections for real-time data.",
-    techStack: ["React", "TypeScript", "WebSocket", "Redux"],
-    image: "/placeholder.svg?height=400&width=600",
+      "Amélioration de mes compétences en gestion des performances des algorithmes, optimisation des requêtes API et gestion de base de données avec Prisma. J'ai également exploré des solutions de coût algorithmique et de partage de ressources.",
+    techStack: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "TailwindCSS"],
+    image: "/dico.png",
   },
   {
-    name: "E-commerce Platform",
+    name: "Gîtes Mon Trésor Web Site Update",
     description:
-      "Built a scalable e-commerce platform with advanced product filtering and real-time inventory management.",
+      "Mise à jour du site web pour Gîtes Mon Trésor, avec des fonctionnalités avancées telles que l'intégration de cartes, la réservation en ligne et le paiement, ainsi que l'amélioration des performances globales du site.",
     challenges:
-      "Implemented a complex product search algorithm and optimized database queries for large product catalogs.",
+      "Intégration des cartes Google sur un site statique, implémentation de la réservation en ligne et du paiement sécurisé avec Stripe, et gestion des requêtes côté serveur avec des optimisations de performance.",
     learned:
-      "Gained expertise in database optimization, caching strategies, and building performant search functionalities.",
-    techStack: ["Next.js", "Node.js", "MongoDB", "Elasticsearch"],
-    image: "/placeholder.svg?height=400&width=600",
+      "Perfectionnement dans l'utilisation de React Hook Form et EmailJS pour les formulaires, gestion de Google Maps API dans un environnement React, et intégration des paiements en ligne avec Stripe. J'ai aussi amélioré la gestion des réservations via un système en ligne.",
+    techStack: [
+      "T3 Stack",
+      "Next.js",
+      "React",
+      "React Google Maps API",
+      "Stripe",
+      "Prisma",
+      "Tailwind CSS",
+      "tRPC",
+    ],
+    image: "/montresor.png",
   },
   {
-    name: "AI-Powered Chatbot",
+    name: "La Classe",
     description:
-      "Developed an AI-powered chatbot for customer support, integrating natural language processing capabilities.",
+      "Développement d'une plateforme SaaS pour les professeurs permettant de gérer le parcours éducatif des élèves, de la création des cours à l'évaluation. La plateforme intègre un système de gestion des résultats et une IA pour personnaliser les recommandations pédagogiques.",
     challenges:
-      "Fine-tuned the NLP model to understand industry-specific terminology and handle complex user queries accurately.",
+      "Intégration d'une architecture flexible pour s'adapter aux différents systèmes éducatifs, gestion des évaluations critériées en fonction des pays et optimisation du contenu dynamique avec TypeScript.",
     learned:
-      "Deepened my understanding of machine learning models and gained experience in deploying AI solutions in production.",
-    techStack: ["Python", "TensorFlow", "Flask", "Docker"],
-    image: "/placeholder.svg?height=400&width=600",
+      "Amélioration de la gestion des types dynamiques avec TypeScript, et approfondissement dans la création de systèmes éducatifs adaptatifs avec une architecture robuste. Développement d'une solution IA pour fournir des recommandations personnalisées.",
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Prisma",
+      "Tailwind CSS",
+      "PostgreSQL",
+      "AI Integration",
+    ],
+    image: "/laclasse.png",
   },
   {
-    name: "Mobile Fitness App",
+    name: "Application Mobile Fitness",
     description:
-      "Created a cross-platform mobile app for personalized workout plans and progress tracking.",
+      "Création d'une application mobile multiplateforme pour des plans d'entraînement personnalisés et le suivi des progrès.",
     challenges:
-      "Designed an intuitive UI/UX for complex workout customization and implemented offline functionality.",
+      "Conception d'une interface UI/UX intuitive pour la personnalisation complexe des entraînements et mise en place d'une fonctionnalité hors-ligne.",
     learned:
-      "Improved my skills in mobile app development, state management in React Native, and offline-first architecture.",
+      "Amélioration des compétences en développement mobile, gestion d'état avec React Native et architecture orientée hors-ligne.",
     techStack: ["React Native", "Redux", "Firebase", "Expo"],
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/wip.jpg",
   },
 ];
 
@@ -67,10 +83,10 @@ interface ProjectCardProps {
 
 function ProjectCard({ project, index }: ProjectCardProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { 
+  const isInView = useInView(ref, {
     once: true,
     margin: "-100px 0px -100px 0px",
-    amount: 0.1
+    amount: 0.1,
   });
 
   return (
@@ -100,17 +116,21 @@ function ProjectCard({ project, index }: ProjectCardProps) {
           <h3 className="text-2xl font-bold text-white">{project.name}</h3>
           <p className="text-gray-300">{project.description}</p>
           <div>
-            <h4 className="text-lg font-semibold text-blue-400">Challenges</h4>
+            <h4 className="text-lg font-semibold text-blue-400">
+              Défis
+            </h4>
             <p className="text-gray-400">{project.challenges}</p>
           </div>
           <div>
             <h4 className="text-lg font-semibold text-purple-400">
-              What I Learned
+              Enseignements
             </h4>
             <p className="text-gray-400">{project.learned}</p>
           </div>
           <div>
-            <h4 className="text-lg font-semibold text-green-400">Tech Stack</h4>
+            <h4 className="text-lg font-semibold text-green-400">
+              Stack Technique
+            </h4>
             <ul className="flex flex-wrap gap-2 mt-2">
               {project.techStack.map((tech) => (
                 <li
@@ -144,7 +164,7 @@ export default function ProjectsSection() {
           transition={{ duration: 0.6 }}
         >
           <span className="bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text">
-            Projects That Speak for Themselves
+            Projets qui parlent d&apos;eux-mêmes
           </span>
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-25 blur-xl -z-10" />
         </motion.h2>
@@ -161,10 +181,14 @@ export default function ProjectsSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
         >
-          <button className="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold py-3 px-8 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 shadow-lg relative group">
-            Let&apos;s Build Something Together
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-0 group-hover:opacity-25 blur-md transition duration-300 ease-in-out" />
-          </button>
+          <motion.button
+            className="bg-gradient-to-r from-green-400 to-teal-500 text-white font-semibold py-3 px-8 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50 shadow-lg relative group"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Construisons quelque chose de remarquable
+            <div className="absolute inset-0 bg-gradient-to-r from-green-300 to-teal-400 rounded-full opacity-0 group-hover:opacity-25 blur-md transition duration-300 ease-in-out" />
+          </motion.button>
         </motion.div>
       </div>
     </motion.section>
