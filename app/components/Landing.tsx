@@ -1,5 +1,6 @@
 import { clsx } from "clsx";
 import { Montserrat, Open_Sans } from "@next/font/google";
+import PaperPlaneAnimation from "./paperPlaneAnimation";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 const openSans = Open_Sans({ subsets: ["latin"] });
@@ -23,6 +24,7 @@ const Landing = () => {
           A web developer
         </h3>
       </div>
+      <PaperPlaneAnimation />
     </div>
   );
 };
