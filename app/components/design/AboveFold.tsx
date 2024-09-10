@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
-
+import { Balancer } from "react-wrap-balancer";
 export default function AboveFold() {
   const [mounted, setMounted] = useState(false);
 
@@ -14,7 +14,7 @@ export default function AboveFold() {
   if (!mounted) return null;
 
   return (
-    <div className="h-screen bg-gray-950 flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 overflow-hidden relative">
+    <div className="min-h-screen bg-gray-950 flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden relative">
       {/* Background effects */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-gray-900/20 opacity-50" />
@@ -29,59 +29,57 @@ export default function AboveFold() {
 
       <div className="relative z-10 w-full max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12 lg:gap-8">
-          {/* Left Column - Main Tagline */}
+          {/* Left Column - Main Headline and CTA Button */}
           <motion.div
-            className="w-full lg:w-2/3"
+            className="w-full lg:w-1/2 space-y-8"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 relative">
-              <span className="bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text">
-                I craft digital experiences that open doors for your business.
-              </span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold relative">
+              <Balancer>
+                <span className="bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text">
+                  Créons des expériences digitales qui propulsent votre
+                  entreprise.
+                </span>
+              </Balancer>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-25 blur-xl -z-10" />
             </h1>
           </motion.div>
 
-          {/* Right Column - Target Audience Headline and Supporting Copy */}
+          {/* Right Column - Subheadline and Supporting Copy */}
           <motion.div
-            className="w-full lg:w-1/3"
+            className="w-full lg:w-1/2 space-y-6"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white mb-6">
-              Looking for a website that gets noticed and turns visitors into
-              loyal customers?
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white">
+              <Balancer>
+                Besoin d&apos;un site web qui se démarque et transforme les
+                visiteurs en clients fidèles ?
+              </Balancer>
             </h2>
-            <h3 className="text-lg sm:text-xl text-gray-300 mb-8">
-              I&apos;m more than just a developer—I&apos;m a dancer, sports enthusiast,
-              and problem solver. My creative energy fuels my passion for
-              designing digital solutions that truly connect with people.
-            </h3>
+            <p className="text-lg sm:text-xl text-gray-300">
+              <Balancer>
+                En tant que développeur, designer et créateur de solutions,
+                j&apos;apporte créativité et passion à chaque projet.
+                Construisons ensemble quelque chose de remarquable.
+              </Balancer>
+            </p>
+
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex justify-start pt-4"
+            >
+              <button className="bg-gradient-to-r from-green-400 to-teal-500 text-white font-bold py-4 px-10 rounded-full text-xl transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50 shadow-lg relative group">
+                Prêt à franchir le cap ?
+                <div className="absolute inset-0 bg-gradient-to-r from-green-300 to-teal-400 rounded-full opacity-0 group-hover:opacity-25 blur-md transition duration-300 ease-in-out" />
+              </button>
+            </motion.div>
           </motion.div>
         </div>
-
-        {/* CTA Button */}
-        <motion.div
-          className="mt-12 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          <button className="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 shadow-lg relative group">
-            Let&apos;s cross the bridge together
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-0 group-hover:opacity-25 blur-md transition duration-300 ease-in-out" />
-          </button>
-          <motion.div
-            className="mt-4 text-purple-300"
-            animate={{ x: [0, 10, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-          >
-            <ArrowRight className="inline-block" size={24} />
-          </motion.div>
-        </motion.div>
       </div>
     </div>
   );

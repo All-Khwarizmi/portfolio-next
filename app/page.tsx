@@ -10,8 +10,8 @@ export default function Home() {
       {" "}
       <AboveFold />
       <ProjectsSection />
-      <IdeasSection />
       <SkillsSection />
+      <IdeasSection />
       <Contact />
     </>
   );
