@@ -29,82 +29,82 @@ interface SkillCategory {
 
 const skillCategories: SkillCategory[] = [
   {
-    title: "Frontend Development",
+    title: "Développement Frontend",
     icon: Code,
     description:
-      "Building dynamic, responsive web applications with modern technologies.",
+      "Créer des applications web dynamiques et réactives avec les technologies modernes.",
     skills: [
       {
         name: "React",
         icon: Braces,
         description:
-          "Building dynamic, single-page applications with reusable components.",
+          "Développer des applications à page unique avec des composants réutilisables.",
       },
       {
         name: "TypeScript",
         icon: FileType,
         description:
-          "Writing robust, type-safe code for large-scale applications.",
+          "Écrire du code robuste et typé pour des applications à grande échelle.",
       },
       {
         name: "Next.js",
         icon: LayoutGrid,
         description:
-          "Optimizing for SEO and performance using a server-side rendering framework.",
+          "Optimisation pour le SEO et les performances avec un rendu côté serveur.",
       },
     ],
   },
   {
-    title: "UI/UX Design",
+    title: "Design UI/UX",
     icon: Palette,
     description:
-      "Crafting intuitive and visually appealing user interfaces and experiences.",
+      "Concevoir des interfaces intuitives et esthétiques qui améliorent l'expérience utilisateur.",
     skills: [
       {
         name: "Figma",
         icon: Figma,
         description:
-          "Crafting user-friendly interfaces with pixel-perfect precision.",
+          "Créer des interfaces fluides avec une précision au pixel près.",
       },
       {
         name: "Storybook",
         icon: Blocks,
         description:
-          "Developing UI components in isolation to ensure reusability and scalability.",
+          "Développer des composants UI en isolation pour garantir leur réutilisabilité et évolutivité.",
       },
       {
         name: "Material UI",
         icon: Palette,
         description:
-          "Implementing design systems for consistent and scalable design patterns.",
+          "Mettre en place des systèmes de design pour des interfaces cohérentes et évolutives.",
       },
     ],
   },
   {
-    title: "Performance & Optimization",
+    title: "Performance & Optimisation",
     icon: Zap,
-    description: "Ensuring applications are fast, efficient, and scalable.",
+    description: "Garantir des applications rapides, efficaces et évolutives.",
     skills: [
       {
         name: "Lighthouse Audits",
         icon: Gauge,
-        description: "Ensuring optimal page load speeds and SEO rankings.",
+        description: "Optimisation des vitesses de chargement et du SEO.",
       },
       {
         name: "Webpack",
         icon: Blocks,
-        description: "Efficient bundling of resources for faster load times.",
+        description:
+          "Bundling efficace des ressources pour des chargements plus rapides.",
       },
       {
         name: "Git",
         icon: GitBranch,
         description:
-          "Seamlessly managing version control and collaboration for smooth project execution.",
+          "Gestion fluide du contrôle de version et des collaborations pour une exécution de projet sans accroc.",
       },
     ],
   },
 ];
-
 interface SkillCategoryProps {
   category: SkillCategory;
   index: number;
@@ -153,7 +153,7 @@ export default function SkillsSection() {
           transition={{ duration: 0.6 }}
         >
           <span className="bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text">
-            Skills That Drive Results
+            Compétences qui font la différence
           </span>
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-25 blur-xl -z-10" />
         </motion.h2>
@@ -178,7 +178,7 @@ export default function SkillsSection() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Let&apos;s Build Something Together
+            Voyons grand !
             <div className="absolute inset-0 bg-gradient-to-r from-green-300 to-teal-400 rounded-full opacity-0 group-hover:opacity-25 blur-md transition duration-300 ease-in-out" />
           </motion.button>
         </motion.div>
