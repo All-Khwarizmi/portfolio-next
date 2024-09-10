@@ -2,24 +2,26 @@
 
 import { motion } from "framer-motion";
 import { Lightbulb, Code, Users } from "lucide-react";
+import Balancer from "react-wrap-balancer";
 
 export default function IdeasSection() {
   const pillars = [
     {
       icon: Lightbulb,
-      title: "Discovery & Strategy",
+      title: "Découverte & Stratégie",
       description:
-        "Understanding the project vision and aligning it with your goals.",
+        "Comprendre votre vision et aligner le projet avec vos objectifs.",
     },
     {
       icon: Code,
-      title: "Execution & Design",
-      description: "Building clean, scalable, and engaging digital solutions.",
+      title: "Exécution & Design",
+      description:
+        "Créer des solutions digitales propres, évolutives et engageantes.",
     },
     {
       icon: Users,
       title: "Collaboration & Feedback",
-      description: "Iterating and improving with transparent communication.",
+      description: "Itérer et s'améliorer avec une communication transparente.",
     },
   ];
 
@@ -27,13 +29,13 @@ export default function IdeasSection() {
     <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-950">
       <div className="container px-4 md:px-6 mx-auto">
         <motion.h2
-          className="text-3xl md:text-4xl font-bold text-center mb-12 relative inline-block"
+          className="text-3xl md:text-4xl flex flex-col items-center font-bold text-center mb-12 relative "
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="bg-gradient-to-r from-blue-400  to-purple-400 text-transparent bg-clip-text">
-            How I Bring Ideas to Life
+          <span className="bg-gradient-to-r from-blue-400  text-center to-purple-400 text-transparent bg-clip-text">
+            Comment je concrétise vos idées
           </span>
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-25 blur-xl -z-10" />
         </motion.h2>
@@ -64,10 +66,12 @@ export default function IdeasSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          Every project starts with a strong foundation. I ensure that your
-          ideas are not only understood but executed with precision. From
-          initial brainstorming to final touches, my process is collaborative,
-          transparent, and driven by results.
+          <Balancer>
+            Chaque projet repose sur des bases solides. Je m&apos;assure que vos
+            idées sont non seulement comprises, mais exécutées avec précision.
+            Du brainstorming initial aux dernières touches, mon processus est
+            collaboratif, transparent et orienté vers les résultats.
+          </Balancer>
         </motion.p>
 
         <motion.div
@@ -77,7 +81,7 @@ export default function IdeasSection() {
           transition={{ duration: 0.6, delay: 0.8 }}
         >
           <button className="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold py-2 px-6 rounded-full text-sm transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 shadow-lg relative group">
-            See My Work in Action
+            Allons-y !
             <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-0 group-hover:opacity-25 blur-md transition duration-300 ease-in-out" />
           </button>
         </motion.div>

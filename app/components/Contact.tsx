@@ -5,6 +5,7 @@ import { ImLinkedin } from "react-icons/im";
 import { MdEmail } from "react-icons/md";
 import { FaTwitterSquare } from "react-icons/fa";
 import Link from "next/link";
+import Balancer from "react-wrap-balancer";
 
 interface ContactLink {
   href: string;
@@ -24,7 +25,7 @@ const contactLinks: ContactLink[] = [
     label: "LinkedIn",
   },
   {
-    href: "mailto:your.email@example.com",
+    href: "mailto:suarezjason@icloud.com",
     icon: MdEmail,
     label: "Email",
   },
@@ -46,7 +47,7 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
         >
           <span className="bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text">
-            Let&apos;s Connect
+            Restons en contact
           </span>
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-25 blur-xl -z-10" />
         </motion.h2>
@@ -59,11 +60,13 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h3 className="text-2xl md:text-3xl text-white font-semibold">
-              Ready to work together?
+              Prêt à collaborer ?
             </h3>
             <p className="text-lg text-gray-300">
-              Let&apos;s discuss your project over a virtual coffee! I&apos;m
-              always excited to hear about new ideas and challenges.
+              <Balancer>
+                Discutons de votre projet autour d&apos;un café virtuel !
+                J&apos;adore découvrir de nouvelles idées et relever des défis.
+              </Balancer>
             </p>
             <div className="flex gap-6">
               {contactLinks.map((link) => (
@@ -92,16 +95,16 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <h3 className="text-2xl md:text-3xl text-white font-semibold">
-              Get in Touch
+              Faisons connaissance
             </h3>
             <p className="text-lg text-gray-300">
-              Whether you have a project in mind or just want to say hello,
-              I&apos;d love to hear from you. Drop me a message and I&apos;ll
-              get back to you as soon as possible.
+              Que vous ayez un projet en tête ou que vous vouliez simplement
+              dire bonjour, j&apos;aimerais échanger avec vous. Envoyez-moi un
+              message, je vous répondrai dès que possible.
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <button className="bg-gradient-to-r from-green-400 to-teal-500 text-white font-semibold py-3 px-8 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50 shadow-lg relative group">
-                Send Me a Message
+                Qu&apos;attendez-vous ?
                 <div className="absolute inset-0 bg-gradient-to-r from-green-300 to-teal-400 rounded-full opacity-0 group-hover:opacity-25 blur-md transition duration-300 ease-in-out" />
               </button>
             </motion.div>
