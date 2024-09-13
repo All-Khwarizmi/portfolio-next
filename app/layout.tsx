@@ -1,7 +1,8 @@
 import GlobalBackground from "@/app/components/design/Background";
 import "./globals.css";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Jason Suarez | Développeur Frontend React & TypeScript",
   description:
     "Portfolio de Jason Suarez, développeur frontend expert en React, TypeScript et Next.js. Découvrez mes projets innovants et mon approche moderne du développement web.",
