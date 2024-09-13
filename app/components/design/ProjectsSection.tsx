@@ -28,11 +28,11 @@ const projects: Project[] = [
   {
     name: "Gîtes Mon Trésor Web Site Update",
     description:
-      "Mise à jour du site web pour Gîtes Mon Trésor, avec des fonctionnalités avancées telles que l'intégration de cartes, la réservation en ligne et le paiement, ainsi que l'amélioration des performances globales du site.",
+      "Mise à jour du site web pour Gîtes Mon Trésor, avec des fonctionnalités avancées telles que l'intégration de cartes ainsi que l'amélioration des performances globales du site.",
     challenges:
-      "Intégration des cartes Google sur un site statique, implémentation de la réservation en ligne et du paiement sécurisé avec Stripe, et gestion des requêtes côté serveur avec des optimisations de performance.",
+      "Intégration des cartes Google sur un site statique et gestion des requêtes côté serveur avec des optimisations de performance.",
     learned:
-      "Perfectionnement dans l'utilisation de React Hook Form et EmailJS pour les formulaires, gestion de Google Maps API dans un environnement React, et intégration des paiements en ligne avec Stripe. J'ai aussi amélioré la gestion des réservations via un système en ligne.",
+      "Perfectionnement dans l'utilisation de React Hook Form et EmailJS pour les formulaires et gestion de Google Maps API dans un environnement React.",
     techStack: [
       "T3 Stack",
       "Next.js",
@@ -48,15 +48,14 @@ const projects: Project[] = [
   {
     name: "La Classe",
     description:
-      "Développement d'une plateforme SaaS pour les professeurs permettant de gérer le parcours éducatif des élèves, de la création des cours à l'évaluation. La plateforme intègre un système de gestion des résultats et une IA pour personnaliser les recommandations pédagogiques.",
+      "Plateforme SaaS pour enseignants, permettant de créer des cours, gérer les élèves, et utiliser un tableau numérique interactif. La plateforme inclut aussi un réseau de partage entre professeurs.",
     challenges:
-      "Intégration d'une architecture flexible pour s'adapter aux différents systèmes éducatifs, gestion des évaluations critériées en fonction des pays et optimisation du contenu dynamique avec TypeScript.",
+      "Intégration d'une IA pour recommandations pédagogiques personnalisées et gestion des systèmes éducatifs variés, tout en maintenant une architecture flexible et performante.",
     learned:
-      "Amélioration de la gestion des types dynamiques avec TypeScript, et approfondissement dans la création de systèmes éducatifs adaptatifs avec une architecture robuste. Développement d'une solution IA pour fournir des recommandations personnalisées.",
+      "Optimisation de la gestion des types dynamiques avec TypeScript et intégration d'une IA pour personnaliser l'enseignement.",
     techStack: [
       "Next.js",
       "TypeScript",
-      "Prisma",
       "Tailwind CSS",
       "PostgreSQL",
       "AI Integration",
@@ -64,14 +63,14 @@ const projects: Project[] = [
     image: "/laclasse.png",
   },
   {
-    name: "Application Mobile Fitness",
+    name: "JustGains",
     description:
-      "Création d'une application mobile multiplateforme pour des plans d'entraînement personnalisés et le suivi des progrès.",
+      "Application SaaS permettant de créer, partager et gérer des entraînements sportifs avec une approche réseau social. L'interface permet une création intuitive de workouts en plusieurs étapes.",
     challenges:
-      "Conception d'une interface UI/UX intuitive pour la personnalisation complexe des entraînements et mise en place d'une fonctionnalité hors-ligne.",
+      "Développement d'une interface UX/UI intuitive pour gérer des workflows complexes de création de workouts, intégration d'un système de publication et de partage de contenu pour les créateurs.",
     learned:
-      "Amélioration des compétences en développement mobile, gestion d'état avec React Native et architecture orientée hors-ligne.",
-    techStack: ["React Native", "Redux", "Firebase", "Expo"],
+      "Amélioration des compétences en design d'interface et gestion d'état avancée avec React, ainsi que la gestion de flux multi-étapes complexes.",
+    techStack: ["React", "Vite", "TanStack Router", "shadcn/ui"],
     image: "/wip.jpg",
   },
 ];
