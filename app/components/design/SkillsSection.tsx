@@ -155,7 +155,7 @@ export default function SkillsSection() {
           <span className="bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text">
             Compétences qui font la différence
           </span>
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-25 blur-xl -z-10" />
+          <div className="absolute inset-0 bg-gradient-to-r md:hidden from-blue-500 to-purple-500 opacity-25 blur-xl -z-10" />
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
