@@ -99,10 +99,10 @@ function ProjectCard({ project, index }: ProjectCardProps) {
     >
       <div
         className={`flex flex-col ${
-          index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+          index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
         }`}
       >
-        <div className="w-full md:w-1/2 relative">
+        <div className="w-full lg:w-1/2 relative">
           <Image
             src={project.image}
             alt={`Screenshot of ${project.name}`}
@@ -112,26 +112,26 @@ function ProjectCard({ project, index }: ProjectCardProps) {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-20" />
         </div>
-        <div className="w-full md:w-1/2 p-6 md:p-8 space-y-4">
-          <h3 className="text-2xl font-bold text-white">{project.name}</h3>
-          <p className="text-gray-300">{project.description}</p>
+        <div className="w-full lg:w-1/2 p-6 lg:p-8 space-y-4">
+          <h3 className="text-2xl font-bold text-white text-center lg:text-left">{project.name}</h3>
+          <p className="text-gray-300 text-center lg:text-left">{project.description}</p>
           <div>
-            <h4 className="text-lg font-semibold text-blue-400">
+            <h4 className="text-lg font-semibold text-blue-400 text-center lg:text-left">
               Défis
             </h4>
-            <p className="text-gray-400">{project.challenges}</p>
+            <p className="text-gray-400 text-center lg:text-left">{project.challenges}</p>
           </div>
           <div>
-            <h4 className="text-lg font-semibold text-purple-400">
+            <h4 className="text-lg font-semibold text-purple-400 text-center lg:text-left">
               Enseignements
             </h4>
-            <p className="text-gray-400">{project.learned}</p>
+            <p className="text-gray-400 text-center lg:text-left">{project.learned}</p>
           </div>
           <div>
-            <h4 className="text-lg font-semibold text-green-400">
+            <h4 className="text-lg font-semibold text-green-400 text-center lg:text-left">
               Stack Technique
             </h4>
-            <ul className="flex flex-wrap gap-2 mt-2">
+            <ul className="flex flex-wrap justify-center lg:justify-start gap-2 mt-2">
               {project.techStack.map((tech) => (
                 <li
                   key={tech}
@@ -156,9 +156,9 @@ export default function ProjectsSection() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, delay: 0.2 }}
     >
-      <div className="container px-4 md:px-6 mx-auto">
+      <div className="container px-4 md:px-6 mx-auto text-center lg:text-left">
         <motion.h2
-          className="text-3xl md:text-4xl font-bold text-center mb-12 relative inline-block"
+          className="text-3xl md:text-4xl font-bold text-center mb-12 relative inline-block "
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}

@@ -127,8 +127,8 @@ function SkillCategory({ category, index }: SkillCategoryProps) {
       <p className="text-gray-400 text-center mb-6">{category.description}</p>
       <ul className="space-y-4">
         {category.skills.map((skill) => (
-          <li key={skill.name} className="flex items-start">
-            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center mr-3">
+          <li key={skill.name} className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left">
+            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center mb-2 sm:mb-0 sm:mr-3">
               <skill.icon className="w-5 h-5 text-blue-400" />
             </div>
             <div>

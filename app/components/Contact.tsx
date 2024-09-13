@@ -39,9 +39,9 @@ const contactLinks: ContactLink[] = [
 const Contact = () => {
   return (
     <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-950">
-      <div className="container px-4 md:px-6 mx-auto">
+      <div className="container px-4 md:px-6 mx-auto text-center lg:text-left">
         <motion.h2
-          className="text-3xl md:text-4xl font-bold text-center mb-12 relative inline-block"
+          className="text-3xl md:text-4xl font-bold text-center lg:text-left mb-12 relative inline-block"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -52,9 +52,9 @@ const Contact = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-25 blur-xl -z-10" />
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
           <motion.div
-            className="space-y-6"
+            className="space-y-6 text-center lg:text-left"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -68,7 +68,7 @@ const Contact = () => {
                 J&apos;adore découvrir de nouvelles idées et relever des défis.
               </Balancer>
             </p>
-            <div className="flex gap-6">
+            <div className="flex justify-center lg:justify-start gap-6">
               {contactLinks.map((link) => (
                 <motion.div
                   key={link.label}
@@ -89,7 +89,7 @@ const Contact = () => {
           </motion.div>
 
           <motion.div
-            className="space-y-6"
+            className="space-y-6 text-center lg:text-left"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -102,7 +102,11 @@ const Contact = () => {
               dire bonjour, j&apos;aimerais échanger avec vous. Envoyez-moi un
               message, je vous répondrai dès que possible.
             </p>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <motion.div 
+              whileHover={{ scale: 1.05 }} 
+              whileTap={{ scale: 0.95 }}
+              className="flex justify-center lg:justify-start"
+            >
               <button className="bg-gradient-to-r from-green-400 to-teal-500 text-white font-semibold py-3 px-8 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50 shadow-lg relative group">
                 Qu&apos;attendez-vous ?
                 <div className="absolute inset-0 bg-gradient-to-r from-green-300 to-teal-400 rounded-full opacity-0 group-hover:opacity-25 blur-md transition duration-300 ease-in-out" />

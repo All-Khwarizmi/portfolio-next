@@ -28,10 +28,10 @@ export default function AboveFold() {
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12 lg:gap-8">
+        <div className="flex flex-col items-center lg:flex-row lg:items-start justify-between gap-12 lg:gap-8">
           {/* Left Column - Main Headline and CTA Button */}
           <motion.div
-            className="w-full lg:w-1/2 space-y-8"
+            className="w-full lg:w-1/2 space-y-8 text-center lg:text-left"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -49,7 +49,7 @@ export default function AboveFold() {
 
           {/* Right Column - Subheadline and Supporting Copy */}
           <motion.div
-            className="w-full lg:w-1/2 space-y-6"
+            className="w-full lg:w-1/2 space-y-6 text-center lg:text-left"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -71,7 +71,7 @@ export default function AboveFold() {
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex justify-start pt-4"
+              className="flex justify-center lg:justify-start pt-4"
             >
               <button className="bg-gradient-to-r from-green-400 to-teal-500 text-white font-bold py-4 px-10 rounded-full text-xl transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50 shadow-lg relative group">
                 Prêt à franchir le cap ?
