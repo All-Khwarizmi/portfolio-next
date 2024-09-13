@@ -2,8 +2,10 @@
 
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { ArrowRight } from "lucide-react";
 import { Balancer } from "react-wrap-balancer";
+import Balls from "@/public/balls.svg";
+import Image from "next/image";
+
 export default function AboveFold() {
   const [mounted, setMounted] = useState(false);
 
@@ -14,18 +16,11 @@ export default function AboveFold() {
   if (!mounted) return null;
 
   return (
-    <div className="min-h-screen bg-gray-950 flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden relative">
+    <div className="min-h-screen flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden relative">
       {/* Background effects */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-gray-900/20 opacity-50" />
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImEiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHBhdGggZD0iTTAgMGgxMHYxMEgweiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLW9wYWNpdHk9Ii4wNSIgc3Ryb2tlLXdpZHRoPSIuNSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNhKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==')]" />
-      </div>
 
-      {/* Glowing effects */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse" />
-        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse delay-1000" />
-      </div>
+      {/* Fade-out effect */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-950 to-transparent" />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto">
         <div className="flex flex-col items-center lg:flex-row lg:items-start justify-between gap-12 lg:gap-8">
@@ -43,7 +38,7 @@ export default function AboveFold() {
                   entreprise.
                 </span>
               </Balancer>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-25 blur-xl -z-10" />
+              {/* <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-25 blur-xl -z-10" /> */}
             </h1>
           </motion.div>
 

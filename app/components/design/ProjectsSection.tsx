@@ -113,19 +113,27 @@ function ProjectCard({ project, index }: ProjectCardProps) {
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-20" />
         </div>
         <div className="w-full lg:w-1/2 p-6 lg:p-8 space-y-4">
-          <h3 className="text-2xl font-bold text-white text-center lg:text-left">{project.name}</h3>
-          <p className="text-gray-300 text-center lg:text-left">{project.description}</p>
+          <h3 className="text-2xl font-bold text-white text-center lg:text-left">
+            {project.name}
+          </h3>
+          <p className="text-gray-300 text-center lg:text-left">
+            {project.description}
+          </p>
           <div>
             <h4 className="text-lg font-semibold text-blue-400 text-center lg:text-left">
               Défis
             </h4>
-            <p className="text-gray-400 text-center lg:text-left">{project.challenges}</p>
+            <p className="text-gray-400 text-center lg:text-left">
+              {project.challenges}
+            </p>
           </div>
           <div>
             <h4 className="text-lg font-semibold text-purple-400 text-center lg:text-left">
               Enseignements
             </h4>
-            <p className="text-gray-400 text-center lg:text-left">{project.learned}</p>
+            <p className="text-gray-400 text-center lg:text-left">
+              {project.learned}
+            </p>
           </div>
           <div>
             <h4 className="text-lg font-semibold text-green-400 text-center lg:text-left">
@@ -150,47 +158,49 @@ function ProjectCard({ project, index }: ProjectCardProps) {
 
 export default function ProjectsSection() {
   return (
-    <motion.section
-      className="w-full py-12 md:py-24 lg:py-32 bg-gray-950"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5, delay: 0.2 }}
-    >
-      <div className="container px-4 md:px-6 mx-auto text-center lg:text-left">
-        <motion.h2
-          className="text-3xl md:text-4xl font-bold text-center mb-12 relative inline-block "
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <span className="bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text">
-            Projets qui parlent d&apos;eux-mêmes
-          </span>
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-25 blur-xl -z-10" />
-        </motion.h2>
-
-        <div className="space-y-20">
-          {projects.map((project, index) => (
-            <ProjectCard key={project.name} project={project} index={index} />
-          ))}
-        </div>
-
-        <motion.div
-          className="flex justify-center mt-16"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-        >
-          <motion.button
-            className="bg-gradient-to-r from-green-400 to-teal-500 text-white font-semibold py-3 px-8 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50 shadow-lg relative group"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+    <div className="min-h-screen  flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden relative pb-12 md:pb-24 lg:pb-32">
+      <motion.section
+        className="w-full pt-0 md:pt-0 lg:pt-0 pb-12 md:pb-24 lg:pb-32 bg-gray-950 "
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        <div className="container px-4 md:px-6 mx-auto text-center lg:text-left">
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold text-center mb-12 relative inline-block "
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
           >
-            Construisons quelque chose de remarquable
-            <div className="absolute inset-0 bg-gradient-to-r from-green-300 to-teal-400 rounded-full opacity-0 group-hover:opacity-25 blur-md transition duration-300 ease-in-out" />
-          </motion.button>
-        </motion.div>
-      </div>
-    </motion.section>
+            <span className="bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text">
+              Projets qui parlent d&apos;eux-mêmes
+            </span>
+           
+          </motion.h2>
+
+          <div className="space-y-20">
+            {projects.map((project, index) => (
+              <ProjectCard key={project.name} project={project} index={index} />
+            ))}
+          </div>
+
+          <motion.div
+            className="flex justify-center mt-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+          >
+            <motion.button
+              className="bg-gradient-to-r from-green-400 to-teal-500 text-white font-semibold py-3 px-8 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50 shadow-lg relative group"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Construisons quelque chose de remarquable
+              <div className="absolute inset-0 bg-gradient-to-r from-green-300 to-teal-400 rounded-full opacity-0 group-hover:opacity-25 blur-md transition duration-300 ease-in-out" />
+            </motion.button>
+          </motion.div>
+        </div>
+      </motion.section>
+    </div>
   );
 }

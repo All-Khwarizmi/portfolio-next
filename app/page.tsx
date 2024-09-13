@@ -6,13 +6,12 @@ import SkillsSection from "./components/design/SkillsSection";
 
 export default function Home() {
   return (
-    <>
-      {" "}
+    <div className="bg-gray-950">
       <AboveFold />
       <ProjectsSection />
       <SkillsSection />
       <IdeasSection />
       <Contact />
-    </>
+    </div>
   );
 }
