@@ -45,7 +45,7 @@ export default function AboveFold() {
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white">
               <Balancer>
-                Besoin d&apos;un site web qui se démarque et transforme les
+                Besoin d&apos;un site web qui se démarque et convertit les
                 visiteurs en clients fidèles ?
               </Balancer>
             </h2>
