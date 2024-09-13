@@ -62,9 +62,10 @@ export default function AboveFold() {
               whileTap={{ scale: 0.95 }}
               className="flex justify-center lg:justify-start pt-4"
             >
-              <button className="bg-gradient-to-r from-green-400 to-teal-500 text-white font-bold py-4 px-10 rounded-full text-xl transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50 shadow-lg relative group">
+              <button className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold py-5 px-12 rounded-full text-xl transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 shadow-xl relative group overflow-hidden">
                 Prêt à franchir le cap ?
-                <div className="absolute inset-0 bg-gradient-to-r from-green-300 to-teal-400 rounded-full opacity-0 group-hover:opacity-25 blur-md transition duration-300 ease-in-out" />
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-300 rounded-full opacity-0 group-hover:opacity-30 blur-md transition duration-300 ease-in-out" />
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-300 rounded-full opacity-20 blur-lg" />
               </button>
             </motion.div>
           </motion.div>
