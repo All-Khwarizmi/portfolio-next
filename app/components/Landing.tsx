@@ -13,7 +13,7 @@ const Landing = () => {
     >
       <div>
         <h1 className={clsx(openSans.className, "text-6xl font-bold pb-3")}>
-          Hi, I'm Jason
+          Hi, I&apos;m Jason
         </h1>
         <h3
           className={clsx(
