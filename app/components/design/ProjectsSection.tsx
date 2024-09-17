@@ -1,8 +1,14 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { cn } from "@/app/lib/utils";
+import { AnimatePresence, motion, useInView } from "framer-motion";
+import {
+  ChevronDownIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+} from "lucide-react";
 import Image from "next/image";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface Project {
   name: string;
@@ -78,9 +84,18 @@ const projects: Project[] = [
 interface ProjectCardProps {
   project: Project;
   index: number;
+  isExpanded: boolean;
+  onToggleExpand: () => void;
+  isMobile: boolean;
 }
 
-function ProjectCard({ project, index }: ProjectCardProps) {
+function ProjectCard({
+  project,
+  index,
+  isExpanded,
+  onToggleExpand,
+  isMobile,
+}: ProjectCardProps) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, {
     once: true,
@@ -91,82 +106,136 @@ function ProjectCard({ project, index }: ProjectCardProps) {
   return (
     <motion.div
       ref={ref}
-      className="bg-gray-900 rounded-xl overflow-hidden shadow-2xl hover:shadow-blue-500/10 transition-shadow duration-300"
+      className={cn(
+        "bg-gray-900 w-full max-w-md mx-auto rounded-xl overflow-hidden shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 ",
+        !isMobile && "absolute top-0 left-0 right-0"
+      )}
       initial={{ opacity: 0, x: -50 }}
       animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
       transition={{ duration: 0.6, delay: index * 0.2 }}
     >
-      <div
-        className={`flex flex-col ${
-          index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-        }`}
-      >
-        <div className="w-full lg:w-1/2 relative">
+      <div className="flex flex-col h-full">
+        <div className="w-full relative h-48 md:h-64">
           <Image
             src={project.image}
             alt={`Screenshot of ${project.name}`}
-            width={600}
-            height={400}
-            className="object-cover w-full h-full"
+            layout="fill"
+            objectFit="cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-20" />
         </div>
-        <div className="w-full lg:w-1/2 p-6 lg:p-8 space-y-4">
-          <h3 className="text-2xl font-bold text-white text-center lg:text-left">
+        <div className="p-6 flex flex-col flex-grow">
+          <h3 className="text-2xl font-bold text-white text-center mb-4">
             {project.name}
           </h3>
-          <p className="text-gray-300 text-center lg:text-left">
+          <p className="text-gray-300 text-center mb-4 flex-grow">
             {project.description}
           </p>
-          <div>
-            <h4 className="text-lg font-semibold text-blue-400 text-center lg:text-left">
-              Défis
-            </h4>
-            <p className="text-gray-400 text-center lg:text-left">
-              {project.challenges}
-            </p>
-          </div>
-          <div>
-            <h4 className="text-lg font-semibold text-purple-400 text-center lg:text-left">
-              Enseignements
-            </h4>
-            <p className="text-gray-400 text-center lg:text-left">
-              {project.learned}
-            </p>
-          </div>
-          <div>
-            <h4 className="text-lg font-semibold text-green-400 text-center lg:text-left">
-              Stack Technique
-            </h4>
-            <ul className="flex flex-wrap justify-center lg:justify-start gap-2 mt-2">
-              {project.techStack.map((tech) => (
-                <li
-                  key={tech}
-                  className="bg-gray-800 text-gray-300 px-2 py-1 rounded text-sm"
-                >
-                  {tech}
-                </li>
-              ))}
-            </ul>
+          <div className="flex justify-center mt-auto">
+            <button
+              onClick={onToggleExpand}
+              className="flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-200"
+            >
+              {isExpanded ? "Voir moins" : "En savoir plus"}
+              <ChevronDownIcon
+                className={cn(
+                  "w-5 h-5 ml-1 transform transition-transform duration-200",
+                  isExpanded && "rotate-180"
+                )}
+              />
+            </button>
           </div>
         </div>
       </div>
+      <AnimatePresence>
+        {isExpanded && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="bg-gray-800 p-6 space-y-4 "
+          >
+            <div>
+              <h4 className="text-lg font-semibold text-blue-400 text-center">
+                Défis
+              </h4>
+              <p className="text-gray-400 text-center">{project.challenges}</p>
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold text-purple-400 text-center">
+                Enseignements
+              </h4>
+              <p className="text-gray-400 text-center">{project.learned}</p>
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold text-green-400 text-center">
+                Stack Technique
+              </h4>
+              <ul className="flex flex-wrap justify-center gap-2 mt-2">
+                {project.techStack.map((tech) => (
+                  <li
+                    key={tech}
+                    className="bg-gray-700 text-gray-300 px-2 py-1 rounded text-sm"
+                  >
+                    {tech}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 }
 
 export default function ProjectsSection() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [expandedIndexes, setExpandedIndexes] = useState<number[]>([]);
+  const [isMobile, setIsMobile] = useState(true);
+
+  const nextProject = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
+    setExpandedIndexes([]);
+  };
+
+  const prevProject = () => {
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + projects.length) % projects.length
+    );
+    setExpandedIndexes([]);
+  };
+
+  const toggleExpand = (index: number) => {
+    setExpandedIndexes((prev) =>
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+    );
+  };
+
+  // Check if the screen is mobile or desktop
+  const checkMobile = () => {
+    setIsMobile(window.innerWidth < 768);
+  };
+
+  // Add event listener for window resize
+  useEffect(() => {
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   return (
-    <div className="min-h-screen  flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden relative pb-12 md:pb-24 lg:pb-32">
+    <div className="min-h-screen flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden relative pb-12 md:pb-24 lg:pb-48">
       <motion.section
-        className="w-full pt-0 md:pt-0 lg:pt-0 pb-12 md:pb-24 lg:pb-32 bg-gray-950 "
+        className="w-full pt-0 md:pt-0 lg:pt-0 pb-12 md:pb-24 lg:pb-32 bg-gray-950"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <div className="container px-4 md:px-6 mx-auto text-center lg:text-left">
+        <div className="container px-4 md:px-6 mx-auto text-center">
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-center mb-12 relative inline-block "
+            className="text-3xl md:text-4xl font-bold text-center mb-12 relative inline-block"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -176,28 +245,47 @@ export default function ProjectsSection() {
             </span>
           </motion.h2>
 
-          <div className="space-y-20">
-            {projects.map((project, index) => (
-              <ProjectCard key={project.name} project={project} index={index} />
-            ))}
+          <div className="relative">
+            {isMobile ? (
+              <div className="space-y-8">
+                {projects.map((project, index) => (
+                  <ProjectCard
+                    key={project.name}
+                    project={project}
+                    index={index}
+                    isExpanded={expandedIndexes.includes(index)}
+                    onToggleExpand={() => toggleExpand(index)}
+                    isMobile={true}
+                  />
+                ))}
+              </div>
+            ) : (
+              <div className="h-[600px] relative">
+                <AnimatePresence>
+                  <ProjectCard
+                    key={projects[currentIndex].name}
+                    project={projects[currentIndex]}
+                    index={currentIndex}
+                    isExpanded={expandedIndexes.includes(currentIndex)}
+                    onToggleExpand={() => toggleExpand(currentIndex)}
+                    isMobile={false}
+                  />
+                </AnimatePresence>
+                <button
+                  onClick={prevProject}
+                  className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 p-2 rounded-full text-white"
+                >
+                  <ChevronLeftIcon className="w-6 h-6" />
+                </button>
+                <button
+                  onClick={nextProject}
+                  className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 p-2 rounded-full text-white"
+                >
+                  <ChevronRightIcon className="w-6 h-6" />
+                </button>
+              </div>
+            )}
           </div>
-
-          <motion.div
-            className="flex justify-center mt-16"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-          >
-            <motion.button
-              className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold py-4 px-10 rounded-full text-xl transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 shadow-xl relative group overflow-hidden"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Construisons quelque chose de remarquable
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-300 rounded-full opacity-0 group-hover:opacity-30 blur-md transition duration-300 ease-in-out" />
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-300 rounded-full opacity-20 blur-lg" />
-            </motion.button>
-          </motion.div>
         </div>
       </motion.section>
     </div>

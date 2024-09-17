@@ -144,7 +144,7 @@ function SkillCategory({ category, index }: SkillCategoryProps) {
 
 export default function SkillsSection() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-950">
+    <section className="w-full bg-gray-950">
       <div className="container px-4 md:px-6 mx-auto">
         <motion.h2
           className="text-3xl md:text-4xl font-bold text-center mb-12 relative inline-block"
@@ -167,22 +167,6 @@ export default function SkillsSection() {
             />
           ))}
         </div>
-        <motion.div
-          className="flex justify-center mt-16"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-        >
-          <motion.button
-            className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold py-4 px-10 rounded-full text-xl transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 shadow-xl relative group overflow-hidden"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Voyons grand !
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-300 rounded-full opacity-0 group-hover:opacity-30 blur-md transition duration-300 ease-in-out" />
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-300 rounded-full opacity-20 blur-lg" />
-          </motion.button>
-        </motion.div>
       </div>
     </section>
   );

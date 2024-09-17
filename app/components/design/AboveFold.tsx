@@ -28,11 +28,9 @@ export default function AboveFold() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold relative">
               <Balancer>
                 <span className="bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text">
-                  Créons des expériences digitales qui propulsent votre
-                  entreprise.
+                  Donnez vie à vos idées avec des sites web qui captivent
                 </span>
               </Balancer>
-              {/* <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-25 blur-xl -z-10" /> */}
             </h1>
           </motion.div>
 
@@ -43,17 +41,19 @@ export default function AboveFold() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white hidden lg:block">
               <Balancer>
-                Besoin d&apos;un site web qui se démarque et convertit les
-                visiteurs en clients fidèles ?
+                Expert React, TypeScript et Next.js pour vos projets web
+                ambitieux
               </Balancer>
             </h2>
             <p className="text-lg sm:text-xl text-gray-300">
               <Balancer>
-                En tant que développeur, designer et créateur de solutions,
-                j&apos;apporte créativité et passion à chaque projet.
-                Construisons ensemble quelque chose de remarquable.
+                Imaginez un site web qui s&apos;adapte à tous les écrans, se
+                charge en un clin d&apos;œil, et guide intuitivement vos
+                visiteurs. Des boutons réactifs, des animations fluides, et un
+                back-office aussi simple que votre smartphone. C&apos;est ce
+                que je crée pour vous.
               </Balancer>
             </p>
 
@@ -62,11 +62,13 @@ export default function AboveFold() {
               whileTap={{ scale: 0.95 }}
               className="flex justify-center lg:justify-start pt-4"
             >
-              <button className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold py-5 px-12 rounded-full text-xl transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 shadow-xl relative group overflow-hidden">
-                Prêt à franchir le cap ?
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-300 rounded-full opacity-0 group-hover:opacity-30 blur-md transition duration-300 ease-in-out" />
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-300 rounded-full opacity-20 blur-lg" />
-              </button>
+              <a href="mailto:suarezjason@icloud.com">
+                <button className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold py-5 px-12 rounded-full text-xl transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 shadow-xl relative group overflow-hidden">
+                  Prêt à franchir le cap ?
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-300 rounded-full opacity-0 group-hover:opacity-30 blur-md transition duration-300 ease-in-out" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-300 rounded-full opacity-20 blur-lg" />
+                </button>
+              </a>
             </motion.div>
           </motion.div>
         </div>
